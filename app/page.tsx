@@ -12,10 +12,10 @@ export default function page() {
     <div>
       <Header />
       <HeroSection />
-      <StatsSection />
       <ServicesSection />
       <PortfolioSection />
       <ProcessSection />
+      <StatsSection />
       <ContactSection />
     </div>
   )

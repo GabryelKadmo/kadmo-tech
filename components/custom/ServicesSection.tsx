@@ -33,7 +33,7 @@ export function ServicesSection() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
-                    Serviços oferecidos
+                    <span className="text-purple-400">Serviços</span> oferecidos
                 </motion.h2>
 
                 <motion.div
