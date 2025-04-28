@@ -62,7 +62,7 @@ export default function Header() {
                         variants={logo}
                         whileHover="hover"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-md"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/70 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-600 blur-3xl"></div>
                         <div className="relative transition-all duration-500 group-hover:scale-110 px-10">
                             <Image
                                 src="/Kdm-Logo.png"
