@@ -20,7 +20,7 @@ export function PortfolioSection() {
         },
         {
             title: "Enadex",
-            description: "Descrição exemplo mudar depois",
+            description: "Plataforma para realizar simulados online",
             tags: ["React", "CSS", "Chakra UI"],
             image: "/Enadex-preview.png",
             link: "https://enadex-v1.vercel.app"
