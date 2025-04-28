@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Github, LinkedinIcon, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { PrivacyPolicyModal } from "../privacy-policy-modal";
+import { TermsOfUseModal } from "../terms-of-use-modal";
 
 const footerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -209,20 +211,13 @@ export function Footer() {
                         © {new Date().getFullYear()} Gabryel Kadmo. Todos os direitos reservados.
                     </p>
                     <div className="flex gap-6">
-                        <motion.a
-                            href="#"
-                            whileHover={{ y: -2 }}
-                            className="text-gray-500 hover:text-gray-300 text-sm"
-                        >
-                            Termos de Serviço
-                        </motion.a>
-                        <motion.a
-                            href="#"
-                            whileHover={{ y: -2 }}
-                            className="text-gray-500 hover:text-gray-300 text-sm"
-                        >
-                            Política de Privacidade
-                        </motion.a>
+                        <motion.div whileHover={{ y: -2 }}>
+                            <TermsOfUseModal />
+                        </motion.div>
+
+                        <motion.div whileHover={{ y: -2 }}>
+                            <PrivacyPolicyModal />
+                        </motion.div>
                     </div>
                 </motion.div>
                 <div className="mt-16 mb-8" id="partners">
