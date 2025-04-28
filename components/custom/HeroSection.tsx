@@ -50,20 +50,19 @@ export default function LandingPage() {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div
-        className="w-full md:w-1/2 flex justify-center"
-        variants={imageVariants}
-        whileHover="hover"
-      >
-        <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] select-none">
+      <div className="w-full md:w-1/2 flex justify-center">
+        <motion.div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] select-none"
+          variants={imageVariants}
+          whileHover="hover"
+        >
           <Image
             src="/profile-pic3.png"
             alt="Landing Page"
             fill
             className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
           />
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
       <motion.div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
         <motion.h1

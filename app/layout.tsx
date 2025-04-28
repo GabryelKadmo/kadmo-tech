@@ -20,7 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "KDM Solutions",
+  title: "KDM Tecnologia",
   description: "Melhor solução para o seu negócio",
 };
 
