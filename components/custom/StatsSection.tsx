@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 export function StatsSection() {
     const stats = [
         { value: '25+', label: 'Projetos concluídos' },
-        { value: '98%', label: 'Satisfação dos clientes' },
-        { value: '5x', label: 'Aumento médio em conversões' },
+        { value: '100%', label: 'Satisfação dos clientes' },
+        { value: '5x', label: 'Melhoria na experiência do usuário' },
         { value: '∞', label: 'Xícaras de café' }
     ];
 
