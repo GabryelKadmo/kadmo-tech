@@ -60,8 +60,7 @@ export default function Header() {
                 {[
                     { href: "#portfolio", label: "Portfólio" },
                     { href: "#contact", label: "Contato" },
-                    { href: "#hero", label: "Parceiros" },
-                    { href: "#hero", label: "Sobre" }
+                    { href: "#partners", label: "Parceiros" },
                 ].map((link) => (
                     <motion.div key={link.href} variants={item}>
                         <Link
