@@ -1,4 +1,5 @@
 import { ContactSection } from '@/components/custom/ContactSection'
+import { Footer } from '@/components/custom/Footer'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
@@ -17,6 +18,7 @@ export default function page() {
       <ProcessSection />
       <StatsSection />
       <ContactSection />
+      <Footer />
     </div>
   )
 }

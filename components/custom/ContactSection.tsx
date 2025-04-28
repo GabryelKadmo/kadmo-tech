@@ -230,15 +230,17 @@ export function ContactSection() {
                                                 <div className="flex gap-4 mt-2">
                                                     <motion.a
                                                         href="https://www.linkedin.com/in/gabryel-kadmo/"
-                                                        whileHover={{ y: -3, color: "#6366f1" }}
-                                                        className="text-gray-400 hover:text-purple-400"
+                                                        whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        className="text-gray-400"
                                                     >
                                                         <LinkedinIcon className="w-6 h-6" />
                                                     </motion.a>
                                                     <motion.a
                                                         href="https://github.com/GabryelKadmo"
-                                                        whileHover={{ y: -3, color: "#6366f1" }}
-                                                        className="text-gray-400 hover:text-purple-400"
+                                                        whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        className="text-gray-400"
                                                     >
                                                         <Github className="w-6 h-6" />
                                                     </motion.a>
@@ -259,10 +261,10 @@ export function ContactSection() {
                             <Card className="bg-gray-800/50 border-gray-700">
                                 <CardContent className="p-6">
                                     <div className="flex items-center gap-3">
-                                        <div className="h-3 w-3 rounded-full bg-red-400 animate-pulse"></div>
+                                        <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
                                         <div>
                                             <h3 className="font-medium text-white">Disponibilidade</h3>
-                                            <p className="text-gray-400">Recusando novos projetos</p>
+                                            <p className="text-gray-400">Aceitando novos projetos</p>
                                         </div>
                                     </div>
                                 </CardContent>
