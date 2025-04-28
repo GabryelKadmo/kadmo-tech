@@ -108,7 +108,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="relative min-h-full overflow-hidden">
+    <div id='hero' className="relative min-h-full overflow-hidden">
       <AnimatedGradient />
       <ParticleBackground />
 

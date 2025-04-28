@@ -29,25 +29,6 @@ export default function Header() {
         }
     };
 
-    const logo = {
-        hidden: { scale: 0.8, opacity: 0 },
-        visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 10
-            }
-        },
-        hover: {
-            rotate: [0, 5, -5, 0],
-            transition: {
-                duration: 0.8
-            }
-        }
-    };
-
     return (
         <motion.header
             className="flex justify-between items-center p-4 md:px-8 lg:px-12 xl:px-24 backdrop-blur-md bg-black/30 shadow-lg sticky top-0 z-50"
@@ -56,23 +37,19 @@ export default function Header() {
             variants={container}
         >
             <motion.div className="flex items-center" variants={item}>
-                <Link href="/" className="flex items-center">
-                    <motion.div
-                        className="relative group"
-                        variants={logo}
-                        whileHover="hover"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/70 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-600 blur-3xl"></div>
-                        <div className="relative transition-all duration-500 group-hover:scale-110 px-10">
+                <Link href="#hero" className="flex items-center">
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/70 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
+                        <div className="relative transition-all duration-500 px-10">
                             <Image
                                 src="/Kdm-Logo.png"
                                 alt="Logo"
-                                width={70}
-                                height={70}
-                                className="transition-all duration-500 group-hover:brightness-125 group-hover:drop-shadow-lg"
+                                width={150}
+                                height={150}
+                                className="transition-all duration-500 group-hover:brightness-125 group-hover:drop-shadow-lg group-hover:scale-105"
                             />
                         </div>
-                    </motion.div>
+                    </div>
                 </Link>
             </motion.div>
 
@@ -83,8 +60,8 @@ export default function Header() {
                 {[
                     { href: "#portfolio", label: "Portfólio" },
                     { href: "#contact", label: "Contato" },
-                    { href: "/partners", label: "Parceiros" },
-                    { href: "/about", label: "Sobre" }
+                    { href: "#hero", label: "Parceiros" },
+                    { href: "#hero", label: "Sobre" }
                 ].map((link) => (
                     <motion.div key={link.href} variants={item}>
                         <Link
