@@ -19,7 +19,7 @@ const cardVariants = {
 export function ServicesSection() {
     const services = [
         { title: "UI/UX Design", description: "Crio interfaces intuitivas e modernas com foco na jornada do usuário", icon: "🎨" },
-        { title: "Desenvolvimento Front-end", description: "Sites performáticos com React, Next.js, Angular", icon: "💻" },
+        { title: "Desenvolvimento Front-end", description: "Sites performáticos com React, Next.js & Angular", icon: "💻" },
         { title: "Sistemas Sob Medida", description: "Soluções escaláveis para problemas específicos", icon: "⚙️" }
     ];
 
