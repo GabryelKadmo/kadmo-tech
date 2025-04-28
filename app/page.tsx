@@ -1,3 +1,4 @@
+import { ContactSection } from '@/components/custom/ContactSection'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
@@ -15,6 +16,7 @@ export default function page() {
       <ServicesSection />
       <PortfolioSection />
       <ProcessSection />
+      <ContactSection />
     </div>
   )
 }

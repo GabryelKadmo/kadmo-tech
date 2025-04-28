@@ -82,7 +82,7 @@ export default function Header() {
             >
                 {[
                     { href: "#portfolio", label: "Portfólio" },
-                    { href: "/contact", label: "Contato" },
+                    { href: "#contact", label: "Contato" },
                     { href: "/partners", label: "Parceiros" },
                     { href: "/about", label: "Sobre" }
                 ].map((link) => (
