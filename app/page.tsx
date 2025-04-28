@@ -1,12 +1,16 @@
 import Header from '@/components/custom/Header'
-import LandingPage from '@/components/custom/LandingPage'
+import HeroSection from '@/components/custom/HeroSection'
+import { ServicesSection } from '@/components/custom/ServicesSection'
+import { StatsSection } from '@/components/custom/StatsSection'
 import React from 'react'
 
 export default function page() {
   return (
     <div>
       <Header />
-      <LandingPage />
+      <HeroSection />
+      <ServicesSection />
+      <StatsSection />
     </div>
   )
 }
