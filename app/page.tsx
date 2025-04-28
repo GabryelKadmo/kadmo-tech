@@ -1,6 +1,8 @@
+import { ContactSection } from '@/components/custom/ContactSection'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
+import { ProcessSection } from '@/components/custom/ProcessSection'
 import { ServicesSection } from '@/components/custom/ServicesSection'
 import { StatsSection } from '@/components/custom/StatsSection'
 import React from 'react'
@@ -10,9 +12,11 @@ export default function page() {
     <div>
       <Header />
       <HeroSection />
-      <ServicesSection />
       <StatsSection />
+      <ServicesSection />
       <PortfolioSection />
+      <ProcessSection />
+      <ContactSection />
     </div>
   )
 }

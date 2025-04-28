@@ -163,3 +163,7 @@
     scrollbar-color: #8b5cf6 #0f172a;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
