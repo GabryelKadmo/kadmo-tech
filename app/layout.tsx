@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image", 
     title: "KDM Tecnologia - Desenvolvimento Digital Sob Medida",
     description: "Software personalizado, landing pages otimizadas e design profissional para impulsionar o seu negócio.",
-    images: ["https://www.kadmo.tech/Kadmo-renascentismo.png"],
+    images: ["https://www.kadmo.tech/Kadmo-renascentismo.webp"],
   },
 };
 

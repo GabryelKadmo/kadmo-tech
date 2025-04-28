@@ -8,21 +8,21 @@ export function PortfolioSection() {
             title: "Edunex",
             description: "Plataforma de cursos online",
             tags: ["Next.js", "Tailwind"],
-            image: "/Edunex-preview.png",
+            image: "/Edunex-preview.webp",
             link: "https://edunex-pro.vercel.app"
         },
         {
             title: "Versa",
             description: "Loja online de roupas modernas e acessíveis",
             tags: ["React", "CSS", "Mantine"],
-            image: "/versa-preview.png",
+            image: "/versa-preview.webp",
             link: "https://onlineversa.vercel.app"
         },
         {
             title: "Enadex",
             description: "Plataforma para realizar simulados online",
             tags: ["React", "CSS", "Chakra UI"],
-            image: "/Enadex-preview.png",
+            image: "/Enadex-preview.webp",
             link: "https://enadex-v1.vercel.app"
         },
     ];
