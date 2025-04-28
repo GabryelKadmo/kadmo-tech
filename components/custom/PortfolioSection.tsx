@@ -28,7 +28,7 @@ export function PortfolioSection() {
     ];
 
     return (
-        <section className="py-20">
+        <section className="pb-20" id="portfolio">
             <h2 className="text-3xl font-bold text-center mb-16 text-white">
                 Trabalhos <span className="text-purple-400">Destacados</span>
             </h2>

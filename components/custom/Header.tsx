@@ -81,7 +81,7 @@ export default function Header() {
                 variants={container}
             >
                 {[
-                    { href: "/", label: "Portfólio" },
+                    { href: "#portfolio", label: "Portfólio" },
                     { href: "/contact", label: "Contato" },
                     { href: "/partners", label: "Parceiros" },
                     { href: "/about", label: "Sobre" }
