@@ -20,17 +20,17 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "KDM Tecnologia",
-  description: "Melhor solução para o seu negócio",
+  title: "KDM Tecnologia - Software, Landing Pages e Design",
+  description: "Desenvolvimento sob medida para empresas. Software eficiente, landing pages que convertem e design de alta qualidade.",
   openGraph: {
-    title: "KDM Tecnologia",
-    description: "Melhor solução para o seu negócio",
+    title: "KDM Tecnologia - Desenvolvimento Digital Sob Medida",
+    description: "Software personalizado, landing pages otimizadas e design profissional para impulsionar o seu negócio.",
     images: [
       {
-        url: "https://media-for2-2.cdn.whatsapp.net/v/t61.24694-24/464576668_573410681952369_2131898454168276175_n.jpg?ccb=11-4&oh=01_Q5Aa1QHDTtD6WJktgKhW4qapSaFgpFf6INv1iTp7ruHvth-SAQ&oe=681B49DE&_nc_sid=5e03e0&_nc_cat=104", // URL da imagem que aparecerá
+        url: "https://www.kadmo.tech/Kadmo-renascentismo.png",
         width: 1200,
         height: 630,
-        alt: "Imagem representativa do seu site",
+        alt: "Desenvolvimento de Software, Landing Pages e Design",
       },
     ],
     url: "https://www.kadmo.tech",
