@@ -78,7 +78,7 @@ export function ContactSection() {
     };
 
     return (
-        <section className="w-full py-10 pb-24 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
+        <section className="w-full py-5 pb-24 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
             <div id="contact" className="absolute inset-0 opacity-10 overflow-hidden">
                 <motion.div
                     animate={{
@@ -103,7 +103,7 @@ export function ContactSection() {
                         ease: "linear",
                         delay: 5
                     }}
-                    className="absolute bottom-0 right-1/4 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"
+                    className="absolute bottom-30 right-1/3 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"
                 ></motion.div>
             </div>
 
