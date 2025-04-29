@@ -70,7 +70,7 @@ const itemVariants = {
 
 export function ProcessSection() {
     return (
-        <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <section className="w-full pb-10 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 overflow-hidden">
                 <motion.div
                     animate={{

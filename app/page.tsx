@@ -2,6 +2,7 @@ import { ContactSection } from '@/components/custom/ContactSection'
 import { Footer } from '@/components/custom/Footer'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
+import PartnersSection from '@/components/custom/PartnersSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
 import { ProcessSection } from '@/components/custom/ProcessSection'
 import { ServicesSection } from '@/components/custom/ServicesSection'
@@ -16,8 +17,9 @@ export default function page() {
       <ServicesSection />
       <PortfolioSection />
       <ProcessSection />
-      <StatsSection />
       <ContactSection />
+      <StatsSection />
+      <PartnersSection />
       <Footer />
     </div>
   )

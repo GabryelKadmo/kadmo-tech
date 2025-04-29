@@ -4,7 +4,7 @@ import { Github, LinkedinIcon, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { PrivacyPolicyModal } from "../privacy-policy-modal";
-import { TermsOfUseModal } from "../terms-of-use-modal";
+import { TermsOfServiceModal } from "../terms-of-use-modal";
 
 const footerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -48,18 +48,6 @@ export function Footer() {
         { icon: <Github className="w-5 h-5" />, href: "https://github.com/GabryelKadmo" },
         { icon: <LinkedinIcon className="w-5 h-5" />, href: "https://www.linkedin.com/in/gabryel-kadmo/" },
         { icon: <Mail className="w-5 h-5" />, href: "mailto:gabryel.kadmo@mx2tech.com.br" }
-    ];
-
-    const partners = [
-        "MX2Tech",
-        "LS Tecnologia",
-        "IRA Tech",
-        "Silas Dev",
-        "IRM Tech Solutions",
-        "Gonzaga Dev",
-        "Net Pires",
-        "Nicolasxs",
-        "Victor Hugo",
     ];
 
     return (
@@ -212,7 +200,7 @@ export function Footer() {
                     </p>
                     <div className="flex gap-6">
                         <motion.div whileHover={{ y: -2 }}>
-                            <TermsOfUseModal />
+                            <TermsOfServiceModal />
                         </motion.div>
 
                         <motion.div whileHover={{ y: -2 }}>
@@ -220,31 +208,6 @@ export function Footer() {
                         </motion.div>
                     </div>
                 </motion.div>
-                <div className="mt-16 mb-8" id="partners">
-                    <h3 className="text-xl font-semibold text-white mb-8 text-center">
-                        Parceiros
-                    </h3>
-
-                    <div className="flex flex-wrap justify-center gap-5">
-                        {partners.map((partner, index) => (
-                            <div
-                                key={index}
-                                className="relative text-gray-300 text-sm px-5 py-3 bg-gray-800/60 rounded-xl cursor-pointer
-                       backdrop-blur-sm border border-gray-700/50 hover:border-purple-400/50
-                       transition-all duration-200 group overflow-hidden hover:bg-gray-800/80
-                       hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
-                            >
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(167,139,250,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-purple-400/30 transition-all duration-300" />
-
-                                <span className="relative z-10 font-medium">{partner}</span>
-
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-pink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
             </div>
         </footer>

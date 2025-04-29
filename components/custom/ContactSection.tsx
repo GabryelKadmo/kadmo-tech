@@ -78,7 +78,7 @@ export function ContactSection() {
     };
 
     return (
-        <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden" id="contact">
+        <section className="w-full py-10 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
             <div id="contact" className="absolute inset-0 opacity-10 overflow-hidden">
                 <motion.div
                     animate={{
