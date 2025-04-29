@@ -12,7 +12,7 @@ import {
 } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
 
-export function TermsOfUseModal() {
+export function TermsOfServiceModal() {
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -22,7 +22,7 @@ export function TermsOfUseModal() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-3xl max-h-[80vh] pb-10">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl">Termos de Uso</DialogTitle>
+                    <DialogTitle className="text-2xl">Termos de Serviço</DialogTitle>
                     <DialogDescription>
                         Última atualização: {new Date().toLocaleDateString()}
                     </DialogDescription>
@@ -32,76 +32,72 @@ export function TermsOfUseModal() {
                         <section>
                             <h3 className="text-lg font-semibold text-black mb-2">1. Aceitação dos Termos</h3>
                             <p>
-                                Ao acessar e utilizar os serviços oferecidos, você concorda em cumprir estes Termos de Uso.
-                                Caso não concorde com qualquer parte destes termos, você não deve utilizar nossos serviços.
+                                Ao acessar e utilizar este site, você concorda em cumprir estes Termos de Serviço e nossa Política de Privacidade. Caso não concorde, por favor, não utilize nosso site.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">2. Serviços Oferecidos</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">2. Uso do Site</h3>
                             <p>
-                                Nós fornecemos serviços de desenvolvimento web, design UI/UX e soluções tecnológicas personalizadas,
-                                conforme descrito em nosso site e acordado com cada cliente.
+                                Este site tem como objetivo apresentar meu trabalho como desenvolvedor front-end, incluindo:
                             </p>
-                        </section>
-
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">3. Responsabilidades do Usuário</h3>
-                            <p>Como usuário de nossos serviços, você concorda em:</p>
                             <ul className="list-disc pl-5 mt-2 space-y-1">
-                                <li>Fornecer informações precisas e completas quando necessário</li>
-                                <li>Utilizar nossos serviços apenas para fins legais</li>
-                                <li>Não reproduzir, duplicar ou revender qualquer parte de nossos serviços</li>
-                                <li>Respeitar todos os direitos de propriedade intelectual</li>
+                                <li>Exibição de projetos pessoais e profissionais</li>
+                                <li>Informações sobre minhas habilidades e experiência</li>
+                                <li>Meios para contato profissional</li>
                             </ul>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">4. Propriedade Intelectual</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">3. Propriedade Intelectual</h3>
                             <p>
-                                Todo o conteúdo e tecnologia relacionados a nossos serviços são de nossa propriedade ou licenciados
-                                para nós. Você concorda em não copiar, modificar ou distribuir qualquer parte de nossos serviços sem
-                                autorização por escrito.
+                                Todo o conteúdo deste site, incluindo códigos, designs, textos, imagens e demais materiais, são de minha propriedade ou licenciados para mim, e estão protegidos por leis de direitos autorais.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">5. Pagamentos e Reembolsos</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">4. Limitações de Uso</h3>
+                            <p>Você concorda em não:</p>
+                            <ul className="list-disc pl-5 mt-2 space-y-1">
+                                <li>Copiar, reproduzir ou distribuir conteúdo sem autorização</li>
+                                <li>Utilizar o site para fins ilegais ou não autorizados</li>
+                                <li>Modificar, adaptar ou fazer engenharia reversa do site</li>
+                                <li>Utilizar o site de forma que possa prejudicar seu funcionamento</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h3 className="text-lg font-semibold text-black mb-2">5. Links para Terceiros</h3>
                             <p>
-                                Os valores e condições de pagamento serão acordados individualmente com cada cliente. Políticas de
-                                reembolso serão claramente especificadas em cada contrato ou proposta de serviço.
+                                O site pode conter links para outros sites. Não tenho controle sobre e não assumo responsabilidade pelo conteúdo, políticas de privacidade ou práticas de sites de terceiros.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">6. Limitação de Responsabilidade</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">6. Isenção de Garantias</h3>
                             <p>
-                                Nós não seremos responsáveis por quaisquer danos indiretos, incidentais, especiais ou consequenciais
-                                resultantes do uso ou incapacidade de usar nossos serviços.
+                                O site é fornecido &quot;no estado em que se encontra&quot;, sem garantias de qualquer tipo, expressas ou implícitas. Não garanto que o site será ininterrupto, seguro ou livre de erros.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">7. Modificações nos Termos</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">7. Limitação de Responsabilidade</h3>
                             <p>
-                                Reservamos o direito de modificar estes Termos de Uso a qualquer momento. Alterações significativas
-                                serão comunicadas aos clientes ativos.
+                                Em nenhuma circunstância serei responsável por quaisquer danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso ou incapacidade de uso deste site.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">8. Lei Aplicável</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">8. Alterações nos Termos</h3>
                             <p>
-                                Estes Termos serão regidos e interpretados de acordo com as leis do Brasil, sem considerar conflitos
-                                de disposições legais.
+                                Reservo-me o direito de modificar estes Termos a qualquer momento. Alterações entrarão em vigor imediatamente após sua publicação no site.
                             </p>
                         </section>
 
                         <section>
                             <h3 className="text-lg font-semibold text-black mb-2">9. Contato</h3>
                             <p>
-                                Para quaisquer dúvidas sobre estes Termos de Uso, entre em contato conosco através dos canais
-                                disponíveis em nosso site.
+                                Para quaisquer dúvidas sobre estes Termos de Serviço, entre em contato através dos meios disponíveis no site.
                             </p>
                         </section>
                     </div>

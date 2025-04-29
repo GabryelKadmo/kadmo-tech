@@ -78,7 +78,7 @@ export function ContactSection() {
     };
 
     return (
-        <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden" id="contact">
+        <section className="w-full py-10 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
             <div id="contact" className="absolute inset-0 opacity-10 overflow-hidden">
                 <motion.div
                     animate={{
@@ -230,6 +230,8 @@ export function ContactSection() {
                                                 <div className="flex gap-4 mt-2">
                                                     <motion.a
                                                         href="https://www.linkedin.com/in/gabryel-kadmo/"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
                                                         whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="text-gray-400"
@@ -238,6 +240,8 @@ export function ContactSection() {
                                                     </motion.a>
                                                     <motion.a
                                                         href="https://github.com/GabryelKadmo"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
                                                         whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="text-gray-400"

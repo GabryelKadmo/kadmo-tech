@@ -79,8 +79,8 @@ export default function Header() {
                 variants={container}
             >
                 {[
-                    { icon: <FiInstagram size={24} />, href: "https://instagram.com", color: "hover:text-pink-500" },
-                    { icon: <FaWhatsapp size={24} />, href: "https://wa.me/5573991548689?text=Olá,%20gostaria%20de%20mais%20informações.", color: "hover:text-green-400" },
+                    { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-pink-500" },
+                    { icon: <FaWhatsapp size={24} />, href: "https://abrir.link/RKPeG", color: "hover:text-green-400" },
                     { icon: <FiGithub size={24} />, href: "https://github.com/GabryelKadmo", color: "hover:text-gray-300" },
                     { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-blue-400" }
                 ].map((social, index) => (

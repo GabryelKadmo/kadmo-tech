@@ -3,110 +3,114 @@
 import * as React from "react";
 import { Button } from "./ui/button";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
 
 export function PrivacyPolicyModal() {
-    return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button variant="link" className="text-gray-500 hover:text-gray-300 text-sm p-0 h-auto cursor-pointer">
-                    Política de Privacidade
-                </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-3xl max-h-[80vh] pb-10">
-                <DialogHeader>
-                    <DialogTitle className="text-2xl">Política de Privacidade</DialogTitle>
-                    <DialogDescription>
-                        Última atualização: {new Date().toLocaleDateString()}
-                    </DialogDescription>
-                </DialogHeader>
-                <ScrollArea className="h-[60vh] pr-4">
-                    <div className="space-y-4 text-black">
-                        <section>
-                            <h3 className="text-lg font-semibold text-balck mb-2">1. Introdução</h3>
-                            <p>
-                                Esta Política de Privacidade descreve como suas informações pessoais são coletadas,
-                                usadas e compartilhadas quando você visita ou utiliza nossos serviços.
-                            </p>
-                        </section>
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="link" className="text-gray-500 hover:text-gray-300 text-sm p-0 h-auto cursor-pointer">
+          Política de Privacidade
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-3xl max-h-[80vh] pb-10">
+        <DialogHeader>
+          <DialogTitle className="text-2xl">Política de Privacidade</DialogTitle>
+          <DialogDescription>
+            Última atualização: {new Date().toLocaleDateString()}
+          </DialogDescription>
+        </DialogHeader>
+        <ScrollArea className="h-[60vh] pr-4">
+          <div className="space-y-4 text-black">
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">1. Sobre este Site</h3>
+              <p>
+                Este é um site pessoal para exibição do meu trabalho como desenvolvedor front-end. Não coletamos dados pessoais automaticamente - apenas informações que você decide compartilhar voluntariamente através do formulário de contato.
+              </p>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">2. Informações que Coletamos</h3>
-                            <p>
-                                Podemos coletar informações pessoais que você nos fornece voluntariamente, como nome,
-                                endereço de e-mail, número de telefone e outras informações de contato quando você:
-                            </p>
-                            <ul className="list-disc pl-5 mt-2 space-y-1">
-                                <li>Preenche formulários em nosso site</li>
-                                <li>Se inscreve para receber nossa newsletter</li>
-                                <li>Realiza uma compra ou contrata nossos serviços</li>
-                                <li>Entra em contato conosco</li>
-                            </ul>
-                        </section>
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">2. Dados Coletados</h3>
+              <p>
+                <strong>Único cenário de coleta:</strong> Quando você usa o formulário de contato, podemos receber:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Seu nome</li>
+                <li>Endereço de e-mail</li>
+                <li>Mensagem enviada</li>
+              </ul>
+              <p className="mt-2">
+                <strong>Dados técnicos:</strong> Como qualquer site, registramos logs anônimos com:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Endereço IP (anonimizado)</li>
+                <li>Tipo de navegador e dispositivo</li>
+                <li>Páginas visitadas (sem associar a identidades)</li>
+              </ul>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">3. Como Usamos Suas Informações</h3>
-                            <p>Utilizamos as informações coletadas para:</p>
-                            <ul className="list-disc pl-5 mt-2 space-y-1">
-                                <li>Fornecer e manter nossos serviços</li>
-                                <li>Notificá-lo sobre mudanças em nossos serviços</li>
-                                <li>Permitir que você participe de recursos interativos</li>
-                                <li>Fornecer suporte ao cliente</li>
-                                <li>Coletar análises ou informações valiosas para melhorar nossos serviços</li>
-                                <li>Monitorar o uso de nossos serviços</li>
-                                <li>Detectar, prevenir e resolver problemas técnicos</li>
-                            </ul>
-                        </section>
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">3. Uso dos Dados</h3>
+              <p>As informações do formulário de contato são usadas exclusivamente para:</p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Responder sua mensagem</li>
+                <li>Enviar informações solicitadas</li>
+                <li>Possíveis follow-ups profissionais</li>
+              </ul>
+              <p className="mt-2">
+                Dados técnicos são usados apenas para:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Monitorar tráfego básico</li>
+                <li>Identificar problemas técnicos</li>
+              </ul>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">4. Compartilhamento de Dados</h3>
-                            <p>
-                                Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário
-                                para fornecer nossos serviços, cumprir com a lei ou proteger nossos direitos.
-                            </p>
-                        </section>
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">4. Armazenamento e Segurança</h3>
+              <p>
+                Mensagens do formulário são armazenadas no serviço de e-mail utilizado (ex: Gmail) e apagadas após 1 ano de inatividade. Não utilizamos bancos de dados ou sistemas complexos para armazenar seus dados.
+              </p>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">5. Segurança de Dados</h3>
-                            <p>
-                                Implementamos medidas de segurança para proteger suas informações pessoais contra
-                                acesso não autorizado, alteração, divulgação ou destruição.
-                            </p>
-                        </section>
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">5. Seus Direitos</h3>
+              <p>
+                Você pode solicitar a qualquer momento:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Acesso às informações que nos forneceu</li>
+                <li>Correção de dados incorretos</li>
+                <li>Exclusão de suas informações de contato</li>
+              </ul>
+              <p className="mt-2">
+                Basta enviar um e-mail para o endereço disponível no site.
+              </p>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">6. Seus Direitos</h3>
-                            <p>
-                                Você tem o direito de acessar, corrigir ou solicitar a exclusão de seus dados pessoais.
-                                Para exercer esses direitos, entre em contato conosco.
-                            </p>
-                        </section>
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">6. Alterações</h3>
+              <p>
+                Esta política pode ser atualizada ocasionalmente. A data no topo do documento indica a última revisão.
+              </p>
+            </section>
 
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">7. Alterações nesta Política</h3>
-                            <p>
-                                Podemos atualizar nossa Política de Privacidade periodicamente. Recomendamos que você
-                                revise esta página regularmente para quaisquer alterações.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h3 className="text-lg font-semibold text-black mb-2">8. Contato</h3>
-                            <p>
-                                Para dúvidas sobre esta Política de Privacidade, entre em contato conosco através
-                                dos meios disponíveis em nosso site.
-                            </p>
-                        </section>
-                    </div>
-                </ScrollArea>
-            </DialogContent>
-        </Dialog>
-    );
+            <section>
+              <h3 className="text-lg font-semibold text-black mb-2">7. Contato</h3>
+              <p>
+                Para dúvidas sobre privacidade, utilize o mesmo formulário de contato disponível no site.
+              </p>
+            </section>
+          </div>
+        </ScrollArea>
+      </DialogContent>
+    </Dialog>
+  );
 }
