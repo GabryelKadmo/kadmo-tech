@@ -175,7 +175,7 @@ export function ContactSection() {
                                             name="message"
                                             placeholder="Sua mensagem"
                                             rows={5}
-                                            className="bg-gray-300 border-gray-600 focus:border-purple-500"
+                                            className="bg-gray-300 border-gray-600 focus:border-purple-500 md:min-h-52"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
