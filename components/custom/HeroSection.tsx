@@ -156,7 +156,7 @@ export default function LandingPage() {
               className="mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl hover:scale-105 relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/5573991548689?text=Olá,%20gostaria%20de%20mais%20informações.', '_blank')}
+              onClick={() => window.open('https://abrir.link/RKPeG', '_blank')}
             >
               <span className="relative z-10">Vamos criar algo incrível juntos</span>
               <span className="absolute inset-0 bg-purple-500/20 rounded-full scale-0 hover:scale-100 opacity-0 hover:opacity-100 transition-all duration-500" />

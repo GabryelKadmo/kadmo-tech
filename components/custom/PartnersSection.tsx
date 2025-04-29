@@ -9,7 +9,7 @@ export default function PartnersSection() {
         { name: "LS Tecnologia", url: "https://github.com/Levixs" },
         { name: "IRA Tech", url: "https://github.com/IanAlexandrino" },
         { name: "IRM Tech Solutions", url: "https://github.com/Iag0ow" },
-        { name: "Net Pires", url: "https://netpires.com.br" },
+        { name: "Net Pires", url: "https://github.com/KeviinPiires" },
         { name: "Silas Dev", url: "https://github.com/silasoli" },
         { name: "Gonzaga Dev", url: "https://github.com/gustavogonzag" },
         { name: "Nicolasxs", url: "https://github.com/NicolasXs" },
