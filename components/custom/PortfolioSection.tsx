@@ -29,15 +29,17 @@ export function PortfolioSection() {
 
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">
-            <section className="pb-20" id="portfolio">
+            <section className="py-20 px-4 sm:px-6" id="portfolio">
                 <h2 className="text-4xl font-bold text-center mb-16 text-white">
                     Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
                 </h2>
 
-                <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} index={index} />
-                    ))}
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {projects.map((project, index) => (
+                            <ProjectCard key={index} project={project} index={index} />
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>

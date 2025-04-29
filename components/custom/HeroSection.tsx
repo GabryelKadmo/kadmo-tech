@@ -141,7 +141,7 @@ export default function LandingPage() {
             whileHover="hover"
           >
             <Image
-              src="/HeroKadmo.webp"
+              src="/heroKadmo.webp"
               alt="Landing Page"
               fill
               className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
