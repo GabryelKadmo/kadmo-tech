@@ -8,10 +8,10 @@ const CircuitBackground = () => {
     <div className="absolute inset-0 z-0 opacity-20">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern 
-            id="circuitPattern" 
-            width="40" 
-            height="40" 
+          <pattern
+            id="circuitPattern"
+            width="40"
+            height="40"
             patternUnits="userSpaceOnUse"
           >
             <motion.path
@@ -121,8 +121,6 @@ export default function LandingPage() {
     <div id='hero' className="relative min-h-full overflow-hidden">
       <AnimatedGradient />
       <CircuitBackground />
-      
-      {/* Efeito de brilho adicional */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-600/10 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-indigo-600/10 blur-[100px]" />
@@ -143,7 +141,7 @@ export default function LandingPage() {
             whileHover="hover"
           >
             <Image
-              src="/profile-pic3.webp"
+              src="/HeroKadmo.webp"
               alt="Landing Page"
               fill
               className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
