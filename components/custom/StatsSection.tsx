@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function StatsSection() {
     const stats = [
@@ -10,8 +10,9 @@ export function StatsSection() {
     ];
 
     return (
-        <section className="py-20 bg-gradient-to-r from-gray-900 to-purple-900/30">
-            <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <section className="py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-purple-900/90 backdrop-blur-md -z-10" />
+            <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
                 {stats.map((stat, index) => (
                     <motion.div
                         key={index}

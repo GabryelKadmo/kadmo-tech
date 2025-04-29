@@ -262,13 +262,13 @@ export function ContactSection() {
                             transition={{ delay: 0.4 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="bg-gray-800/50 border-gray-700">
+                            <Card className="bg-gray-800/50 border-gray-700 select-none">
                                 <CardContent className="p-6">
                                     <div className="flex items-center gap-3">
-                                        <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
+                                        <div className="h-3 w-3 rounded-full bg-red-400 animate-pulse"></div>
                                         <div>
                                             <h3 className="font-medium text-white">Disponibilidade</h3>
-                                            <p className="text-gray-400">Aceitando novos projetos</p>
+                                            <p className="text-gray-400">Recusando novos projetos</p>
                                         </div>
                                     </div>
                                 </CardContent>
