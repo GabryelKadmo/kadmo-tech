@@ -30,8 +30,8 @@ export function PortfolioSection() {
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">
             <section className="pb-20" id="portfolio">
-                <h2 className="text-3xl font-bold text-center mb-16 text-white">
-                    Trabalhos <span className="text-purple-400">Destacados</span>
+                <h2 className="text-4xl font-bold text-center mb-16 text-white">
+                    Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
                 </h2>
 
                 <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">

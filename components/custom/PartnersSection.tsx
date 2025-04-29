@@ -17,11 +17,11 @@ export default function PartnersSection() {
     ];
 
     return (
-        <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800 pb-10">
-            <div className="mt-16 mb-8" id="partners">
-                <h3 className="text-xl font-semibold text-white mb-8 text-center">
-                    Parceiros
-                </h3>
+        <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800 py-8">
+            <div className="mt-16 mb-16" id="partners">
+                <h2 className="text-3xl text-center md:text-4xl font-bold text-white mb-16">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Conexões</span> que Transformam
+                </h2>
 
                 <div className="flex flex-wrap justify-center gap-5">
                     {partners.map((partner, index) => (
