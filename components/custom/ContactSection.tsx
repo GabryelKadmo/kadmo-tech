@@ -103,7 +103,7 @@ export function ContactSection() {
                         ease: "linear",
                         delay: 5
                     }}
-                    className="absolute bottom-0 right-1/4 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"
+                    className="absolute bottom-30 right-1/3 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"
                 ></motion.div>
             </div>
 
