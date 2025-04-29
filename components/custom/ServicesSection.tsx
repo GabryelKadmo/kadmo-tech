@@ -26,7 +26,7 @@ export function ServicesSection() {
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-t border-gray-800">
 
-            <section className="py-20 select-none">
+            <section id="services" className="py-20 select-none">
                 <div className="container mx-auto px-6">
                     <motion.h2
                         className="text-3xl md:text-4xl font-bold text-center mb-16 text-white"

@@ -38,7 +38,7 @@ const itemVariants = {
 
 export function Footer() {
     const links = [
-        { name: "Início", href: "#home" },
+        { name: "Início", href: "#hero" },
         { name: "Serviços", href: "#services" },
         { name: "Processo", href: "#process" },
         { name: "Contato", href: "#contact" }
