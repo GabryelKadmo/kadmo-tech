@@ -70,7 +70,7 @@ const itemVariants = {
 
 export function ProcessSection() {
     return (
-        <section id="process" className="w-full pb-10 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden">
+        <section id="process" className="w-full pt-20 pb-10 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 overflow-hidden">
                 <motion.div
                     animate={{
@@ -200,7 +200,6 @@ export function ProcessSection() {
                     ))}
                 </motion.div>
 
-                {/* Rodapé da seção */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +209,7 @@ export function ProcessSection() {
                         stiffness: 100
                     }}
                     viewport={{ once: true }}
-                    className="text-center mt-16"
+                    className="text-center mt-5"
                 >
                     <p className="text-gray-500 mb-6">
                         Garantia de satisfação em todas as etapas do projeto

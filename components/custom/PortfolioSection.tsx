@@ -29,7 +29,7 @@ export function PortfolioSection() {
 
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">
-            <section className="py-20 px-4 sm:px-6" id="portfolio">
+            <section className="py-0 px-4 sm:px-6" id="portfolio">
                 <h2 className="text-4xl font-bold text-center mb-16 text-white">
                     Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
                 </h2>
