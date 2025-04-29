@@ -35,7 +35,7 @@ export function ServicesSection() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-purple-400">Serviços</span> oferecidos
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Serviços</span> oferecidos
                     </motion.h2>
 
                     <motion.div
