@@ -7,7 +7,7 @@ export default function PartnersSection() {
     const partners = [
         { name: "P.K inc.", url: "https://github.com/P-K-INC" },
         { name: "MX2Tech", url: "https://mx2tech.com.br" },
-        { name: "LS Tecnologia", url: "https://github.com/Levixs" },
+        { name: "LS Tecnologia", url: "https://lstecnologia.com/" },
         { name: "IRA Tech", url: "https://github.com/IanAlexandrino" },
         { name: "IRM Tech Solutions", url: "https://github.com/Iag0ow" },
         { name: "Net Pires", url: "https://github.com/KeviinPiires" },
