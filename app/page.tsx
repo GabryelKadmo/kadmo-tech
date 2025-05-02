@@ -12,7 +12,6 @@ import React from 'react'
 export default function page() {
   return (
     <div>
-      {/* teste */}
       <Header />
       <HeroSection />
       <ServicesSection />
