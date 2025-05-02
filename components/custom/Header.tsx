@@ -39,15 +39,34 @@ export default function Header() {
             <motion.div className="flex items-center" variants={item}>
                 <Link href="#hero" className="flex items-center">
                     <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/70 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
-                        <div className="relative transition-all duration-500 px-10">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-full scale-0 opacity-0 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700 blur-xl group-hover:blur-2xl"></div>
+
+                        <div className="absolute inset-0 border-2 border-transparent rounded-full group-hover:border-white/30 group-hover:scale-105 transition-all duration-500"></div>
+
+                        <div className="relative transition-all duration-500 px-10 group-hover:rotate-[5deg]">
                             <Image
-                                src="/Kdm-Logo.png"
+                                src="/LogoBrainKadmo.svg"
                                 alt="Logo"
-                                width={150}
-                                height={150}
-                                className="transition-all duration-500 group-hover:brightness-125 group-hover:drop-shadow-lg group-hover:scale-105"
+                                width={120}
+                                height={120}
+                                className="transition-all duration-500 rounded-full 
+                                    group-hover:brightness-110 
+                                    group-hover:drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]
+                                    group-hover:scale-110
+                                    group-active:scale-100"
                             />
+                        </div>
+
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                            {[...Array(5)].map((_, i) => (
+                                <div key={i} className={`absolute w-1 h-1 bg-white rounded-full 
+                ${i % 2 === 0 ? 'animate-float-up' : 'animate-float-down'}`}
+                                    style={{
+                                        left: `${Math.random() * 80 + 10}%`,
+                                        top: `${Math.random() * 80 + 10}%`,
+                                        animationDelay: `${i * 0.2}s`
+                                    }}></div>
+                            ))}
                         </div>
                     </div>
                 </Link>
