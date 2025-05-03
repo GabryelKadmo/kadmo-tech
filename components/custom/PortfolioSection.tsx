@@ -19,11 +19,11 @@ export function PortfolioSection() {
             link: "https://onlineversa.vercel.app"
         },
         {
-            title: "Enadex",
-            description: "Plataforma para realizar simulados online",
-            tags: ["React", "CSS", "Chakra UI"],
-            image: "/Enadex-preview.webp",
-            link: "https://enadex-v1.vercel.app"
+            title: "LS Tecnologia",
+            description: "Landing page para empresa de desenvolvimento de software",
+            tags: ["React", "CSS", "Shadcn"],
+            image: "/LstecnologiaPreview.webp",
+            link: "https://lstecnologia.com"
         },
     ];
 
