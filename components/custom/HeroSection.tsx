@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -78,6 +78,9 @@ const AnimatedGradient = () => {
 };
 
 export default function LandingPage() {
+  const [clickCount, setClickCount] = useState(0);
+  const [showLogo, setShowLogo] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -114,6 +117,39 @@ export default function LandingPage() {
     hover: {
       scale: 1.05,
       transition: { duration: 0.3 }
+    },
+    spin: {
+      rotate: 360,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+  
+
+  const logoVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "backOut"
+      }
+    }
+  };
+
+  const handleImageClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (newCount >= 3) {
+      setShowLogo(true);
+      setTimeout(() => {
+        setShowLogo(false);
+        setClickCount(0);
+      }, 5000); 
     }
   };
 
@@ -139,13 +175,32 @@ export default function LandingPage() {
             className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] select-none"
             variants={imageVariants}
             whileHover="hover"
+            animate={clickCount >= 3 ? "spin" : "visible"}
+            onClick={handleImageClick}
+            style={{ cursor: 'pointer' }}
           >
-            <Image
-              src="/heroKadmo.webp"
-              alt="Landing Page"
-              fill
-              className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
-            />
+            {showLogo ? (
+              <motion.div
+                variants={logoVariants}
+                initial="hidden"
+                animate="visible"
+                className="w-full h-full"
+              >
+                <Image
+                  src="/LogoHero.png"
+                  alt="Logo"
+                  fill
+                  className="object-contain rounded-full"
+                />
+              </motion.div>
+            ) : (
+              <Image
+                src="/heroKadmo.webp"
+                alt="Landing Page"
+                fill
+                className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
+              />
+            )}
             <div className="absolute inset-0 rounded-full border-4 border-transparent hover:border-purple-500/10 transition-all duration-500" />
           </motion.div>
         </div>

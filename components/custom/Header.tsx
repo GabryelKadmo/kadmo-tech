@@ -47,8 +47,8 @@ export default function Header() {
                             <Image
                                 src="/LogoBrainKadmo.svg"
                                 alt="Logo"
-                                width={120}
-                                height={120}
+                                width={100}
+                                height={100}
                                 className="transition-all duration-500 rounded-full 
                                     group-hover:brightness-110 
                                     group-hover:drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]
