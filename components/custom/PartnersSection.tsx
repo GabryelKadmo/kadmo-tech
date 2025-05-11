@@ -60,6 +60,7 @@ export default function PartnersSection() {
                 >
                     {partners.map((partner, index) => (
                         <motion.div
+                            className='mb-3'
                             key={index}
                             variants={item}
                             whileHover={{ scale: 1.05 }}
@@ -69,10 +70,10 @@ export default function PartnersSection() {
                                 href={partner.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative text-gray-300 text-sm px-5 py-3 bg-gray-800/60 rounded-xl cursor-pointer
-                           backdrop-blur-sm border border-gray-700/50 hover:border-purple-400/50
-                           transition-all duration-200 group overflow-hidden hover:bg-gray-800/80
-                           hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
+                                className="relative text-gray-300 text-sm px-5 py-3 bg-gray-800/60 rounded-xl cursor-pointer 
+                                backdrop-blur-sm border border-gray-700/50 hover:border-purple-400/50
+                                transition-all duration-200 group overflow-hidden hover:bg-gray-800/80
+                                hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
                             >
                                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(167,139,250,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
