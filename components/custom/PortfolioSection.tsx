@@ -5,11 +5,11 @@ import { ProjectCard } from "./ProjectCard";
 export function PortfolioSection() {
     const projects = [
         {
-            title: "Edunex",
-            description: "Plataforma de cursos online",
-            tags: ["Next.js", "Tailwind"],
-            image: "/Edunex-preview.webp",
-            link: "https://edunex-pro.vercel.app"
+            title: "Dra. Cinthia Freire",
+            description: "Landing Page para a advogada Cinthia Freire",
+            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
+            image: "/DraCinthiaPreview.webp",
+            link: "https://cinthia-freire.vercel.app/"
         },
         {
             title: "Versa",
