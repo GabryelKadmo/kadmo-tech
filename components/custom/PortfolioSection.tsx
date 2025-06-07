@@ -12,16 +12,16 @@ export function PortfolioSection() {
             link: "https://cinthia-freire.vercel.app/"
         },
         {
-            title: "Versa",
-            description: "Loja online de roupas modernas e acessíveis",
-            tags: ["React", "CSS", "Mantine"],
-            image: "/versa-preview.webp",
-            link: "https://onlineversa.vercel.app"
+            title: "Smart Wallet Brasil",
+            description: "Aplicativo de carteira digital para controle financeiro",
+            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
+            image: "/SmartWallet-preview.png",
+            link: "https://smartwallet-brasil.vercel.app/"
         },
         {
             title: "LS Tecnologia",
             description: "Landing page para empresa de desenvolvimento de software",
-            tags: ["React", "CSS", "Shadcn"],
+            tags: ["Next", "Tailwind", "Shadcn"],
             image: "/LstecnologiaPreview.webp",
             link: "https://lstecnologia.com"
         },
