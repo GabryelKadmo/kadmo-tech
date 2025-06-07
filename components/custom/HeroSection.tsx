@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -80,6 +80,45 @@ const AnimatedGradient = () => {
 export default function LandingPage() {
   const [clickCount, setClickCount] = useState(0);
   const [showLogo, setShowLogo] = useState(false);
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [lastClickTime, setLastClickTime] = useState(0);
+  const [showSpamWarning, setShowSpamWarning] = useState(false);
+  const [shouldShake, setShouldShake] = useState(false);
+  const [spamMessageIndex, setSpamMessageIndex] = useState(0);
+  const [spamAttempts, setSpamAttempts] = useState(0);
+  const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const spamWarningRef = useRef<NodeJS.Timeout | null>(null);
+  const spamMessages = [
+    "🚫 Ei, muito rápido!",
+    "🐌 Devagar e sempre!",
+    "⏰ Calma, não precisa correr",
+    "🛑 Menos pressa, mais precisão",
+    "🎯 Um clique de cada vez",
+    `😅 ${spamAttempts > 5 ? `${spamAttempts} tentativas de spam!` : 'Respira e clica normal'}`
+  ];
+
+  useEffect(() => {
+    if (clickCount > 0 && clickCount < 3 && !isSpinning) {
+      if (resetTimeoutRef.current) {
+        clearTimeout(resetTimeoutRef.current);
+      }
+
+      resetTimeoutRef.current = setTimeout(() => {
+        setClickCount(0);
+        setLastClickTime(0);
+        setSpamAttempts(0);
+      }, 3000);
+    }
+
+    return () => {
+      if (resetTimeoutRef.current) {
+        clearTimeout(resetTimeoutRef.current);
+      }
+      if (spamWarningRef.current) {
+        clearTimeout(spamWarningRef.current);
+      }
+    };
+  }, [clickCount, isSpinning]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -124,9 +163,30 @@ export default function LandingPage() {
         duration: 1.5,
         ease: "easeInOut"
       }
+    },
+    clicked: {
+      scale: [1, 0.95, 1.1, 1],
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    },
+    continuousSpin: {
+      rotate: 360,
+      transition: {
+        duration: 2,
+        ease: "linear",
+        repeat: Infinity
+      }
+    },
+    shake: {
+      x: [-10, 10, -10, 10, 0],
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut"
+      }
     }
   };
-  
 
   const logoVariants = {
     hidden: { scale: 0, opacity: 0 },
@@ -140,16 +200,69 @@ export default function LandingPage() {
     }
   };
 
+  const handleInvalidClick = () => {
+    setSpamAttempts(prev => prev + 1);
+
+    setShouldShake(true);
+    setTimeout(() => setShouldShake(false), 400);
+
+    setSpamMessageIndex((prev) => (prev + 1) % spamMessages.length);
+    setShowSpamWarning(true);
+    if (spamWarningRef.current) {
+      clearTimeout(spamWarningRef.current);
+    }
+    spamWarningRef.current = setTimeout(() => {
+      setShowSpamWarning(false);
+    }, 1500);
+  };
+
   const handleImageClick = () => {
+    const currentTime = Date.now();
+
+    if (isSpinning || showLogo) {
+      return;
+    }
+
+    if (currentTime - lastClickTime < 900) {
+      handleInvalidClick();
+      return;
+    }
+
+    if (showSpamWarning) {
+      setShowSpamWarning(false);
+      if (spamWarningRef.current) {
+        clearTimeout(spamWarningRef.current);
+      }
+    }
+
+    setLastClickTime(currentTime);
     const newCount = clickCount + 1;
     setClickCount(newCount);
 
+    if (resetTimeoutRef.current) {
+      clearTimeout(resetTimeoutRef.current);
+    }
+
     if (newCount >= 3) {
+      if (showSpamWarning) {
+        setShowSpamWarning(false);
+        if (spamWarningRef.current) {
+          clearTimeout(spamWarningRef.current);
+        }
+      }
+
+      setIsSpinning(true);
       setShowLogo(true);
+
       setTimeout(() => {
-        setShowLogo(false);
-        setClickCount(0);
-      }, 5000); 
+        setIsSpinning(false);
+        setTimeout(() => {
+          setShowLogo(false);
+          setClickCount(0);
+          setLastClickTime(0);
+          setSpamAttempts(0);
+        }, 2000);
+      }, 3000);
     }
   };
 
@@ -174,17 +287,74 @@ export default function LandingPage() {
           <motion.div
             className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] select-none"
             variants={imageVariants}
-            whileHover="hover"
-            animate={clickCount >= 3 ? "spin" : "visible"}
+            whileHover={!isSpinning && !showLogo ? "hover" : undefined}
+            animate={
+              shouldShake ? "shake" :
+                isSpinning ? "continuousSpin" :
+                  clickCount >= 3 ? "spin" :
+                    "visible"
+            }
+            whileTap={!isSpinning && !showLogo ? "clicked" : undefined}
             onClick={handleImageClick}
-            style={{ cursor: 'pointer' }}
+            style={{
+              cursor: isSpinning || showLogo ? 'default' : 'pointer'
+            }}
           >
+            {showSpamWarning && !isSpinning && !showLogo && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: -10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: -10 }}
+                className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-30"
+              >
+                <div className="bg-red-500/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2">
+                  <span className="text-white text-sm font-medium">
+                    {spamMessages[spamMessageIndex]}
+                  </span>
+                </div>
+              </motion.div>
+            )}
+
+            {clickCount > 0 && clickCount < 3 && !showLogo && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-20"
+              >
+                <div className="bg-purple-600/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 transition-all duration-300">
+                  <span className="text-white text-sm font-medium">
+                    {`${clickCount}/3 cliques`}
+                  </span>
+                  <div className="flex gap-1">
+                    {[1, 2, 3].map((dot) => (
+                      <div
+                        key={dot}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${dot <= clickCount ? 'bg-white scale-110' : 'bg-white/30 scale-90'
+                          }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {clickCount > 0 && clickCount < 3 && (
+              <motion.div
+                initial={{ scale: 1, opacity: 0.5 }}
+                animate={{ scale: 1.3, opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="absolute inset-0 rounded-full border-4 border-purple-400 pointer-events-none"
+                key={clickCount}
+              />
+            )}
+
             {showLogo ? (
               <motion.div
                 variants={logoVariants}
                 initial="hidden"
                 animate="visible"
-                className="w-full h-full"
+                className="w-full h-full relative"
               >
                 <Image
                   src="/LogoHero.png"
@@ -192,16 +362,27 @@ export default function LandingPage() {
                   fill
                   className="object-contain rounded-full"
                 />
+                <div
+                  className="absolute inset-0 rounded-full border-4 border-yellow-400/80 shadow-2xl shadow-yellow-400/50 transition-all duration-500"
+                />
               </motion.div>
             ) : (
-              <Image
-                src="/heroKadmo.webp"
-                alt="Landing Page"
-                fill
-                className="rounded-full shadow-2xl object-cover border-4 border-purple-500/20 hover:border-purple-500/50 transition-all duration-500"
-              />
+              <div className="w-full h-full relative">
+                <Image
+                  src="/KadmoPFPpintura.png"
+                  alt="Landing Page"
+                  fill
+                  className="rounded-full shadow-2xl object-cover transition-all duration-500"
+                />
+                <div
+                  className={`absolute inset-0 rounded-full border-4 transition-all duration-500 ${clickCount === 1 ? 'border-purple-400/50 shadow-lg shadow-purple-400/25' :
+                    clickCount === 2 ? 'border-purple-300/70 shadow-xl shadow-purple-300/40 animate-pulse' :
+                      clickCount >= 3 ? 'border-yellow-400/80 shadow-2xl shadow-yellow-400/50' :
+                        'border-purple-500/20 hover:border-purple-500/50'
+                    }`}
+                />
+              </div>
             )}
-            <div className="absolute inset-0 rounded-full border-4 border-transparent hover:border-purple-500/10 transition-all duration-500" />
           </motion.div>
         </div>
 

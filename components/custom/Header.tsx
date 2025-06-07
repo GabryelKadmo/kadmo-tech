@@ -41,9 +41,9 @@ export default function Header() {
                     <div className="relative group">
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-full scale-0 opacity-0 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700 blur-xl group-hover:blur-2xl"></div>
 
-                        <div className="absolute inset-0 border-2 border-transparent rounded-full group-hover:border-white/30 group-hover:scale-105 transition-all duration-500"></div>
+                        {/* <div className="absolute inset-0 border-2 border-transparent rounded-full group-hover:border-white/30 group-hover:scale-105 transition-all duration-500"></div> */}
 
-                        <div className="relative transition-all duration-500 px-10 group-hover:rotate-[5deg]">
+                        <div className="relative transition-all duration-500 px-10 group-hover:scvale-110 ">
                             <Image
                                 src="/LogoBrainKadmo.svg"
                                 alt="Logo"
