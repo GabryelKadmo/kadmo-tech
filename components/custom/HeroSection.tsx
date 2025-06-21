@@ -223,7 +223,7 @@ export default function LandingPage() {
       return;
     }
 
-    if (currentTime - lastClickTime < 900) {
+    if (currentTime - lastClickTime < 250) {
       handleInvalidClick();
       return;
     }
