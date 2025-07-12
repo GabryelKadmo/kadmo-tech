@@ -1,6 +1,19 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://forms.gle/VeVfXbfQAEU5iCcv5",
+      "permanent": false,
+      "has": [
+        {
+          "type": "host",
+          "value": "form.kadmo.tech"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
   
