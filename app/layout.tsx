@@ -23,6 +23,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "KDM Tecnologia - Software, Landing Pages e Design",
   description: "Desenvolvimento sob medida para empresas. Software eficiente, landing pages que convertem e design de alta qualidade.",
+  verification: {
+    google: "-WzZ89JmhH0Sun7xXiw1Gx22IXJAoRFtDDUyhIwSRW8",
+  },
   openGraph: {
     title: "KDM Tecnologia - Desenvolvimento Digital Sob Medida",
     description: "Software personalizado, landing pages otimizadas e design profissional para impulsionar o seu negócio.",
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image", 
+    card: "summary_large_image",
     title: "KDM Tecnologia - Desenvolvimento Digital Sob Medida",
     description: "Software personalizado, landing pages otimizadas e design profissional para impulsionar o seu negócio.",
     images: ["https://www.kadmo.tech/Kadmo-renascentismo.webp"],
