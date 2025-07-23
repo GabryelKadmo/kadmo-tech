@@ -12,6 +12,20 @@ export default function Header() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        // Fecha o menu mobile se estiver aberto
+        if (isMenuOpen) {
+            setIsMenuOpen(false);
+        }
+    };
     const container = {
         hidden: { opacity: 0 },
         visible: {
@@ -44,7 +58,7 @@ export default function Header() {
                 variants={container}
             >
                 <motion.div className="flex items-center" variants={item}>
-                    <Link href="#hero" className="flex items-center">
+                    <Link href="/" className="flex items-center">
                         <div className="relative group">
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-full scale-0 opacity-0 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700 blur-xl group-hover:blur-2xl"></div>
 
@@ -81,18 +95,18 @@ export default function Header() {
                     variants={container}
                 >
                     {[
-                        { href: "#portfolio", label: "Portfólio" },
-                        { href: "#contact", label: "Contato" },
-                        { href: "#partners", label: "Parceiros" },
+                        { id: "portfolio", label: "Portfólio" },
+                        { id: "contact", label: "Contato" },
+                        { id: "partners", label: "Parceiros" },
                     ].map((link) => (
-                        <motion.div key={link.href} variants={item}>
-                            <Link
-                                href={link.href}
+                        <motion.div key={link.id} variants={item}>
+                            <button
+                                onClick={() => scrollToSection(link.id)}
                                 className="relative group px-2 py-1 hover:text-white transition-colors duration-300"
                             >
                                 {link.label}
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
-                            </Link>
+                            </button>
                         </motion.div>
                     ))}
                 </motion.nav>
@@ -171,43 +185,72 @@ export default function Header() {
                         onClick={toggleMenu}
                     >
                         {/* Backdrop */}
-                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+                        <div className="absolute inset-0 bg-black/80 backdrop-blur-md" />
 
                         {/* Menu Content */}
                         <motion.div
-                            className="absolute top-0 right-0 h-full w-80 bg-gradient-to-br from-gray-900/95 via-purple-900/95 to-gray-900/95 backdrop-blur-md shadow-2xl"
+                            className="absolute top-0 right-0 h-full w-80 bg-gradient-to-br from-gray-900/98 via-black/95 to-gray-800/98 backdrop-blur-xl shadow-2xl border-l border-gray-700/50"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Close Button */}
-                            <div className="flex justify-end p-6">
+                            {/* Header do Menu */}
+                            <motion.div
+                                className="flex items-center justify-between p-6 border-b border-gray-700/30"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    delay: 0.1,
+                                    duration: 0.5,
+                                    type: "spring",
+                                    stiffness: 120,
+                                    damping: 15
+                                }}
+                            >
+                                <div className="flex items-center space-x-2">
+                                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                    <span className="text-white font-semibold text-lg">Menu</span>
+                                </div>
                                 <button
                                     onClick={toggleMenu}
-                                    className="p-2 text-white/80 hover:text-white transition-colors duration-300"
+                                    className="p-2 text-white/70 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-300"
                                 >
-                                    <FiX size={28} />
+                                    <FiX size={24} />
                                 </button>
-                            </div>
+                            </motion.div>
                             {/* Navigation Links */}
-                            <div className="px-8 py-2 space-y-4">
+                            <div className="px-8 py-6 space-y-3">
                                 {[
-                                    { href: "#portfolio", label: "Portfólio", icon: "🎨" },
-                                    { href: "#contact", label: "Contato", icon: "📧" },
-                                    { href: "#partners", label: "Parceiros", icon: "🤝" },
+                                    { id: "portfolio", label: "Portfólio", icon: "🎨" },
+                                    { id: "contact", label: "Contato", icon: "📧" },
+                                    { id: "partners", label: "Parceiros", icon: "🤝" },
                                 ].map((link, index) => (
                                     <motion.div
-                                        key={link.href}
-                                        initial={{ opacity: 0, x: 30 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.1 + 0.2 }}
+                                        key={link.id}
+                                        initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                                        transition={{
+                                            delay: index * 0.15 + 0.3,
+                                            duration: 0.6,
+                                            type: "spring",
+                                            stiffness: 100,
+                                            damping: 15
+                                        }}
                                     >
-                                        <Link
-                                            href={link.href}
-                                            onClick={toggleMenu}
-                                            className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 transition-all duration-300 group"
+                                        <motion.button
+                                            onClick={() => scrollToSection(link.id)}
+                                            className="flex items-center space-x-3 p-4 rounded-xl bg-gray-800/40 hover:bg-gray-700/60 border border-gray-600/30 hover:border-purple-500/50 transition-all duration-500 group w-full text-left backdrop-blur-sm"
+                                            whileHover={{
+                                                scale: 1.02,
+                                                x: 4,
+                                                transition: { duration: 0.3, ease: "easeOut" }
+                                            }}
+                                            whileTap={{
+                                                scale: 0.98,
+                                                transition: { duration: 0.1 }
+                                            }}
                                         >
                                             <span className="text-lg">{link.icon}</span>
                                             <span className="text-lg font-medium text-white group-hover:text-purple-300 transition-colors duration-300">
@@ -216,21 +259,32 @@ export default function Header() {
                                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
                                                 →
                                             </div>
-                                        </Link>
+                                        </motion.button>
                                     </motion.div>
                                 ))}
                             </div>
                             {/* Social Links */}
-                            <div className="px-8 py-4 mt-4">
-                                <div className="mb-4">
+                            <div className="px-8 py-4 mt-6 border-t border-gray-700/30">
+                                <motion.div
+                                    className="mb-4"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{
+                                        delay: 0.5,
+                                        duration: 0.5,
+                                        type: "spring",
+                                        stiffness: 100,
+                                        damping: 15
+                                    }}
+                                >
                                     <h3 className="text-base font-bold text-white mb-1 flex items-center gap-2">
                                         <span className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></span>
                                         Conecte-se
                                     </h3>
-                                    <p className="text-xs text-white/60">
+                                    <p className="text-xs text-gray-400">
                                         Vamos conversar sobre seu próximo projeto
                                     </p>
-                                </div>
+                                </motion.div>
 
                                 <div className="grid grid-cols-2 gap-3">
                                     {[
@@ -265,16 +319,31 @@ export default function Header() {
                                     ].map((social, index) => (
                                         <motion.div
                                             key={index}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: index * 0.1 + 0.5 }}
+                                            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            transition={{
+                                                delay: index * 0.1 + 0.6,
+                                                duration: 0.5,
+                                                type: "spring",
+                                                stiffness: 120,
+                                                damping: 12
+                                            }}
                                         >
-                                            <Link
+                                            <motion.a
                                                 href={social.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`group relative overflow-hidden flex flex-col items-center justify-center space-y-1 p-3 h-16 rounded-lg bg-gradient-to-br ${social.bgGradient} border border-white/10 hover:border-white/30 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+                                                className={`group relative overflow-hidden flex flex-col items-center justify-center space-y-1 p-3 h-16 rounded-lg bg-gray-800/60 border border-gray-600/40 hover:border-gray-500/60 text-white transition-all duration-300 backdrop-blur-sm`}
                                                 aria-label={social.label}
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    y: -2,
+                                                    transition: { duration: 0.3, ease: "easeOut" }
+                                                }}
+                                                whileTap={{
+                                                    scale: 0.95,
+                                                    transition: { duration: 0.1 }
+                                                }}
                                             >
                                                 <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                                                 <div className="relative z-10 flex flex-col items-center space-y-0.5">
@@ -285,22 +354,38 @@ export default function Header() {
                                                         {social.label}
                                                     </span>
                                                 </div>
-                                            </Link>
+                                            </motion.a>
                                         </motion.div>
                                     ))}
                                 </div>
                             </div>
                             {/* CTA Button */}
-                            <div className="px-8 py-4">
+                            <div className="px-8 py-4 border-t border-gray-700/30">
                                 <motion.button
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.7 }}
+                                    initial={{ opacity: 0, y: 40, scale: 0.85 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    transition={{
+                                        delay: 1.1,
+                                        duration: 0.8,
+                                        type: "spring",
+                                        stiffness: 80,
+                                        damping: 20
+                                    }}
                                     onClick={() => {
                                         window.open('https://abrir.link/RKPeG', '_blank');
                                         toggleMenu();
                                     }}
-                                    className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+                                    className="w-full px-6 py-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-600/90 hover:to-pink-600/90 text-white font-semibold rounded-2xl shadow-lg transition-all duration-500 backdrop-blur-sm border border-purple-500/20 hover:border-purple-400/40"
+                                    whileHover={{
+                                        scale: 1.015,
+                                        y: -2,
+                                        boxShadow: "0 25px 50px rgba(168, 85, 247, 0.25)",
+                                        transition: { duration: 0.4, ease: "easeOut" }
+                                    }}
+                                    whileTap={{
+                                        scale: 0.985,
+                                        transition: { duration: 0.15, ease: "easeInOut" }
+                                    }}
                                 >
                                     Vamos criar algo incrível juntos
                                 </motion.button>
