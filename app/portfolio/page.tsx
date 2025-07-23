@@ -30,28 +30,14 @@ export default function PortfolioPage() {
             image: "/LstecnologiaPreview.webp",
             link: "https://lstecnologia.com"
         },
-        // Adicionando mais projetos para demonstrar o portfólio completo
-        {
-            title: "Sistema de Gestão Empresarial",
-            description: "Plataforma completa para gestão de pequenas e médias empresas",
-            tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-            image: "/Kadmo-renascentismo.webp",
-            link: "#"
+         {
+            title: "Dra. Thaíse Loureiro",
+            description: "Landing page para engenheira ambiental com foco em atendimento personalizado",
+            tags: ["Next.js", "Tailwind", "Shadcn"],
+            image: "/ThaiseLoureiroPreview.png",
+            link: "https://thaise-loureiro.vercel.app"
         },
-        {
-            title: "E-commerce Customizado",
-            description: "Loja virtual com pagamentos integrados e painel administrativo",
-            tags: ["React", "Node.js", "Stripe", "MongoDB"],
-            image: "/heroKadmo.webp",
-            link: "#"
-        },
-        {
-            title: "App Mobile de Delivery",
-            description: "Aplicativo mobile para delivery de alimentos com geolocalização",
-            tags: ["React Native", "Firebase", "Google Maps", "Redux"],
-            image: "/LogoBrainKadmo.svg",
-            link: "#"
-        }
+       
     ];
 
     return (
@@ -100,7 +86,7 @@ export default function PortfolioPage() {
                         Entre em contato conosco e vamos criar algo incrível juntos!
                     </p>
                     <Link href="/#contact">
-                        <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                        <Button size="lg" className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                             Fale Conosco
                         </Button>
                     </Link>

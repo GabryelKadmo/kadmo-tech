@@ -8,11 +8,11 @@ import { motion } from "motion/react";
 export function PortfolioSection() {
     const featuredProjects = [
         {
-            title: "Dra. Cinthia Freire",
-            description: "Landing Page profissional para advogada com design moderno e otimizado para conversões",
-            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
-            image: "/DraCinthiaPreview.webp",
-            link: "https://cinthia-freire.vercel.app/"
+            title: "Dra. Thaíse Loureiro",
+            description: "Landing page para engenheira ambiental com foco em atendimento personalizado",
+            tags: ["Next.js", "Tailwind", "Shadcn"],
+            image: "/ThaiseLoureiroPreview.png",
+            link: "https://thaise-loureiro.vercel.app"
         },
         {
             title: "Smart Wallet Brasil",
