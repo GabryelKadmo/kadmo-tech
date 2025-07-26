@@ -1,34 +1,26 @@
 "use client";
 
+
+import { useEffect, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { getProjects, Project } from "@/lib/api/projects";
 
 export function PortfolioSection() {
-    const featuredProjects = [
-        {
-            title: "Dra. Thaíse Loureiro",
-            description: "Landing page para engenheira ambiental com foco em atendimento personalizado",
-            tags: ["Next.js", "Tailwind", "Shadcn"],
-            image: "/ThaiseLoureiroPreview.png",
-            link: "https://thaise-loureiro.vercel.app"
-        },
-        {
-            title: "Smart Wallet Brasil",
-            description: "Aplicativo de carteira digital com recursos avançados de controle financeiro pessoal",
-            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
-            image: "/SmartWallet-preview.png",
-            link: "https://smartwallet-brasil.vercel.app/"
-        },
-        {
-            title: "LS Tecnologia",
-            description: "Landing page corporativa para empresa de desenvolvimento com foco em performance",
-            tags: ["Next.js", "Tailwind", "Shadcn"],
-            image: "/LstecnologiaPreview.webp",
-            link: "https://lstecnologia.com"
-        },
-    ];
+    const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+    useEffect(() => {
+        getProjects()
+            .then((projects: Project[]) => {
+                // Filtra apenas os projetos com featured true e ordena pelo campo order
+                const filtered = projects
+                    .filter((p: Project) => p.featured)
+                    .sort((a: Project, b: Project) => (a.order ?? 99) - (b.order ?? 99));
+                setFeaturedProjects(filtered);
+            })
+            .catch(() => setFeaturedProjects([]));
+    }, []);
 
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">

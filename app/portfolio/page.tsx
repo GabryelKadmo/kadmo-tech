@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { getProjects, Project } from "@/lib/api/projects";
 import { ProjectCard } from "@/components/custom/ProjectCard";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/custom/Header";
@@ -8,37 +10,17 @@ import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function PortfolioPage() {
-    const allProjects = [
-        {
-            title: "Dra. Cinthia Freire",
-            description: "Landing Page para a advogada Cinthia Freire com design moderno e responsivo",
-            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
-            image: "/DraCinthiaPreview.webp",
-            link: "https://cinthia-freire.vercel.app/"
-        },
-        {
-            title: "Smart Wallet Brasil",
-            description: "Aplicativo de carteira digital para controle financeiro pessoal",
-            tags: ["React", "Tailwind", "TypeScript", "Shadcn"],
-            image: "/SmartWallet-preview.png",
-            link: "https://smartwallet-brasil.vercel.app/"
-        },
-        {
-            title: "LS Tecnologia",
-            description: "Landing page para empresa de desenvolvimento de software",
-            tags: ["Next.js", "Tailwind", "Shadcn"],
-            image: "/LstecnologiaPreview.webp",
-            link: "https://lstecnologia.com"
-        },
-         {
-            title: "Dra. Thaíse Loureiro",
-            description: "Landing page para engenheira ambiental com foco em atendimento personalizado",
-            tags: ["Next.js", "Tailwind", "Shadcn"],
-            image: "/ThaiseLoureiroPreview.png",
-            link: "https://thaise-loureiro.vercel.app"
-        },
-       
-    ];
+    const [allProjects, setAllProjects] = useState<Project[]>([]);
+
+    useEffect(() => {
+        getProjects()
+            .then((projects: Project[]) => {
+                // Ordena pelo campo order, mas mostra todos
+                const sorted = projects.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+                setAllProjects(sorted);
+            })
+            .catch(() => setAllProjects([]));
+    }, []);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">

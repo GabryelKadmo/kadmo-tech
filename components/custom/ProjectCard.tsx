@@ -26,7 +26,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <div className="relative z-0">
                 <div className="relative h-44 overflow-hidden">
                     <Image
-                        src={project.image}
+                        src={project.image || "/Kdm-Logo.png"}
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-300"
