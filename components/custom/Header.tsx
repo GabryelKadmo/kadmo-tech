@@ -95,19 +95,29 @@ export default function Header() {
                     variants={container}
                 >
                     {[
-                        { id: "inicio", label: "Início" },
+                        { id: "inicio", label: "Início", href: "/#hero" },
                         { id: "portfolio", label: "Portfólio" },
                         { id: "contact", label: "Contato" },
                         { id: "partners", label: "Parceiros" },
                     ].map((link) => (
                         <motion.div key={link.id} variants={item}>
-                            <button
-                                onClick={() => scrollToSection(link.id)}
-                                className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
-                            >
-                                {link.label}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
-                            </button>
+                            {link.id === "inicio" ? (
+                                <button
+                                    onClick={() => window.location.href = "/#hero"}
+                                    className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
+                                >
+                                    {link.label}
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={() => scrollToSection(link.id)}
+                                    className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
+                                >
+                                    {link.label}
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                                </button>
+                            )}
                         </motion.div>
                     ))}
                 </motion.nav>
