@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import Image from "next/image";
@@ -260,7 +261,7 @@ export default function AdminPage() {
                             value={form.link}
                             onChange={e => setForm(f => ({ ...f, link: e.target.value }))}
                         />
-                        <div className="flex items-center gap-4 mt-2">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 bg-gray-800/60 rounded-lg px-4 py-3 border border-gray-700">
                             <label className="flex items-center gap-2 text-sm font-medium text-white select-none">
                                 <Switch
                                     checked={form.featured}
@@ -269,16 +270,22 @@ export default function AdminPage() {
                                 />
                                 Destaque
                             </label>
-                            <Input
-                                type="number"
-                                min={1}
-                                step={1}
-                                placeholder="Ordem"
-                                value={form.order}
-                                onChange={e => setForm(f => ({ ...f, order: Number(e.target.value) }))}
-                                className="w-24"
-                            />
-                            <span className="text-xs text-gray-400">Ordem</span>
+                            <div className="flex items-center gap-2">
+                                <Select
+                                    value={String(form.order)}
+                                    onValueChange={val => setForm(f => ({ ...f, order: Number(val) }))}
+                                >
+                                    <SelectTrigger className="w-32 bg-gray-800/80 border border-gray-700 text-white rounded-lg px-4 py-2 shadow focus:border-pink-500 focus:ring-2 focus:ring-pink-400/30">
+                                        <SelectValue placeholder="Ordem" />
+                                    </SelectTrigger>
+                                    <SelectContent className="bg-gray-900 border border-gray-700 text-white rounded-lg">
+                                        <SelectItem value="1">1º</SelectItem>
+                                        <SelectItem value="2">2º</SelectItem>
+                                        <SelectItem value="3">3º</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                                <span className="text-xs text-gray-400">Ordem</span>
+                            </div>
                         </div>
                         {formError && <div className="text-red-400 text-center text-sm font-medium">{formError}</div>}
                         <DialogFooter className="flex flex-row gap-2 justify-end mt-2">
