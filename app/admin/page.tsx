@@ -17,7 +17,7 @@ import { checkToken as checkTokenApi } from "../../lib/api/auth";
 export default function AdminPage() {
     const [auth, setAuth] = useState(false);
     const [projects, setProjects] = useState<projectApi.Project[]>([]);
-    const [selectedProject, ] = useState<projectApi.Project | null>(null);
+    const [selectedProject,] = useState<projectApi.Project | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
@@ -309,7 +309,7 @@ export default function AdminPage() {
                 </div>
                 {selectedProject && (
                     <div className="mb-10">
-                        <Card className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 border border-purple-700 shadow-2xl">
+                        <Card className="bg-gradient-to-br py-[0px] from-gray-900/90 to-gray-800/80 border border-purple-700 shadow-2xl">
                             <CardHeader>
                                 <CardTitle className="text-white text-xl flex items-center gap-2">
                                     <span className="text-purple-400 font-bold">#{selectedProject.id}</span> {selectedProject.title}
@@ -340,10 +340,10 @@ export default function AdminPage() {
                     {!loading && !error && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {projects.map((project: projectApi.Project) => (
-                                <Card key={project.id} className="flex flex-col justify-between h-[410px] min-h-[410px] relative bg-gradient-to-br from-[#23213a] to-[#393053] border border-gray-700 shadow-xl hover:shadow-purple-700/40 transition-shadow group overflow-hidden rounded-2xl">
+                                <Card key={project.id} className="flex flex-col justify-between h-[410px] min-h-[410px] relative bg-gradient-to-br from-[#23213a] to-[#393053] border border-gray-700 shadow-xl hover:shadow-purple-700/40 transition-shadow group overflow-hidden rounded-2xl pb-8 pt-0">
                                     <div className="relative w-full mb-3 rounded-t-2xl overflow-hidden">
                                         {project.image ? (
-                                            <div className="relative w-full aspect-[2.5/1] overflow-hidden rounded-t-2xl">
+                                            <div className="relative w-full aspect-[2.5/1] overflow-hidden rounded-t-none">
                                                 {/* Blur background */}
                                                 <Image
                                                     src={project.image}
@@ -366,7 +366,9 @@ export default function AdminPage() {
                                                 />
                                             </div>
                                         ) : (
-                                            <div className="w-full h-40 flex items-center justify-center bg-gray-800 text-gray-400 rounded-t-2xl">Sem imagem</div>
+                                            <div className="relative w-full aspect-[2.5/1] overflow-hidden rounded-t-2xl flex items-center justify-center bg-gray-800 text-gray-400">
+                                                <span className="text-base">Sem imagem</span>
+                                            </div>
                                         )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                                         {/* ID removido do card */}
