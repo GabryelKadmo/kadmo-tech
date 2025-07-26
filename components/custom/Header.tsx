@@ -95,6 +95,7 @@ export default function Header() {
                     variants={container}
                 >
                     {[
+                        { id: "inicio", label: "Início" },
                         { id: "portfolio", label: "Portfólio" },
                         { id: "contact", label: "Contato" },
                         { id: "partners", label: "Parceiros" },
