@@ -4,33 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { motion } from "framer-motion";
 import { Github, LinkedinIcon, Mail, MessageSquare, Phone } from "lucide-react";
 import { useState } from "react";
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.3
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 10
-        }
-    }
-};
 
 export function ContactSection() {
     const [formData, setFormData] = useState({
@@ -80,46 +55,12 @@ export function ContactSection() {
     return (
         <section className="w-full py-5 pb-24 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
             <div id="contact" className="absolute inset-0 opacity-10 overflow-hidden">
-                <motion.div
-                    animate={{
-                        x: [0, 100, 0],
-                        y: [0, -50, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                    className="absolute top-0 left-1/4 w-32 h-32 bg-purple-500 rounded-full filter blur-3xl"
-                ></motion.div>
-                <motion.div
-                    animate={{
-                        x: [0, -100, 0],
-                        y: [0, 50, 0],
-                    }}
-                    transition={{
-                        duration: 25,
-                        repeat: Infinity,
-                        ease: "linear",
-                        delay: 5
-                    }}
-                    className="absolute bottom-30 right-1/3 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"
-                ></motion.div>
+                <div className="absolute top-0 left-1/4 w-32 h-32 bg-purple-500 rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-30 right-1/3 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 10,
-                        duration: 0.6
-                    }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <Badge variant="outline" className="mb-4 bg-gray-800 text-purple-300 border-purple-500/50">
                         Vamos conversar
                     </Badge>
@@ -129,16 +70,10 @@ export function ContactSection() {
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                         Pronto para transformar sua ideia em realidade? Envie uma mensagem ou me encontre nas redes.
                     </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-                >
-                    <motion.div variants={itemVariants}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
                         <Card className="bg-gray-800/50 border-gray-700 hover:border-purple-500/30 transition-colors h-full">
                             <CardHeader>
                                 <CardTitle className="text-white flex items-center gap-2">
@@ -148,7 +83,7 @@ export function ContactSection() {
                             </CardHeader>
                             <CardContent>
                                 <form className="space-y-4" onSubmit={handleSubmit}>
-                                    <motion.div whileHover={{ scale: 1.01 }}>
+                                    <div>
                                         <Input
                                             type="text"
                                             name="name"
@@ -158,8 +93,8 @@ export function ContactSection() {
                                             onChange={handleChange}
                                             required
                                         />
-                                    </motion.div>
-                                    <motion.div whileHover={{ scale: 1.01 }}>
+                                    </div>
+                                    <div>
                                         <Input
                                             type="email"
                                             name="email"
@@ -169,8 +104,8 @@ export function ContactSection() {
                                             onChange={handleChange}
                                             required
                                         />
-                                    </motion.div>
-                                    <motion.div whileHover={{ scale: 1.01 }}>
+                                    </div>
+                                    <div>
                                         <Textarea
                                             name="message"
                                             placeholder="Sua mensagem"
@@ -180,17 +115,14 @@ export function ContactSection() {
                                             onChange={handleChange}
                                             required
                                         />
-                                    </motion.div>
+                                    </div>
                                     {submitStatus === "success" && (
                                         <div className="text-green-400 text-sm">Mensagem enviada com sucesso!</div>
                                     )}
                                     {submitStatus === "error" && (
                                         <div className="text-red-400 text-sm">Ocorreu um erro ao enviar a mensagem. Tente novamente.</div>
                                     )}
-                                    <motion.div
-                                        whileHover={{ scale: 1.03 }}
-                                        whileTap={{ scale: 0.98 }}
-                                    >
+                                    <div>
                                         <Button
                                             type="submit"
                                             className="w-full bg-gradient-to-r cursor-pointer from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
@@ -198,11 +130,11 @@ export function ContactSection() {
                                         >
                                             {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                                         </Button>
-                                    </motion.div>
+                                    </div>
                                 </form>
                             </CardContent>
                         </Card>
-                    </motion.div>
+                    </div>
 
                     <div className="space-y-6">
                         <div>
@@ -228,26 +160,22 @@ export function ContactSection() {
                                             <div>
                                                 <h3 className="font-medium text-white">Redes Sociais</h3>
                                                 <div className="flex gap-4 mt-2">
-                                                    <motion.a
+                                                    <a
                                                         href="https://www.linkedin.com/in/gabryel-kadmo/"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
-                                                        whileTap={{ scale: 0.95 }}
-                                                        className="text-gray-400"
+                                                        className="text-gray-400 hover:text-indigo-400 transition-colors"
                                                     >
                                                         <LinkedinIcon className="w-6 h-6" />
-                                                    </motion.a>
-                                                    <motion.a
+                                                    </a>
+                                                    <a
                                                         href="https://github.com/GabryelKadmo"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        whileHover={{ y: -3, scale: 1.1, color: "#6366f1" }}
-                                                        whileTap={{ scale: 0.95 }}
-                                                        className="text-gray-400"
+                                                        className="text-gray-400 hover:text-indigo-400 transition-colors"
                                                     >
                                                         <Github className="w-6 h-6" />
-                                                    </motion.a>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,12 +184,7 @@ export function ContactSection() {
                             </Card>
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.4 }}
-                            viewport={{ once: true }}
-                        >
+                        <div>
                             <Card className="bg-gray-800/50 border-gray-700 select-none">
                                 <CardContent className="p-6">
                                     <div className="flex items-center gap-3">
@@ -273,9 +196,9 @@ export function ContactSection() {
                                     </div>
                                 </CardContent>
                             </Card>
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
