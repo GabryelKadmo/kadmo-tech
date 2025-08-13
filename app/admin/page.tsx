@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
+import { AlertDialog } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,6 +24,8 @@ export default function AdminPage() {
     const [error, setError] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
     const [editProject, setEditProject] = useState<projectApi.Project | null>(null);
+    const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+    const [projectToDelete, setProjectToDelete] = useState<{ id: number; title: string } | null>(null);
     const [form, setForm] = useState({
         title: "",
         description: "",
@@ -198,12 +201,18 @@ export default function AdminPage() {
         }
     }
 
-    async function handleDelete(id: number) {
-        if (!window.confirm("Tem certeza que deseja remover este projeto?")) return;
+    function openDeleteDialog(id: number, title: string) {
+        setProjectToDelete({ id, title });
+        setDeleteDialogOpen(true);
+    }
+
+    async function confirmDelete() {
+        if (!projectToDelete) return;
+
         setLoading(true);
         try {
             const token = typeof window !== "undefined" ? localStorage.getItem("kadmo_admin_token") : null;
-            const res = await fetch(`https://api.kadmo.tech/projects/${id}`, {
+            const res = await fetch(`https://api.kadmo.tech/projects/${projectToDelete.id}`, {
                 method: "DELETE",
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
@@ -218,6 +227,8 @@ export default function AdminPage() {
             setError("Erro ao remover projeto");
         } finally {
             setLoading(false);
+            setDeleteDialogOpen(false);
+            setProjectToDelete(null);
         }
     }
 
@@ -392,7 +403,7 @@ export default function AdminPage() {
                                                     <path d="M15 6l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
                                             </Button>
-                                            <Button size="icon" variant="destructive" className="p-2" onClick={() => handleDelete(project.id)} title="Remover">
+                                            <Button size="icon" variant="destructive" className="p-2" onClick={() => openDeleteDialog(project.id, project.title)} title="Remover">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                                             </Button>
                                         </div>
@@ -421,6 +432,17 @@ export default function AdminPage() {
                     )}
                 </div>
             </div>
+
+            <AlertDialog
+                open={deleteDialogOpen}
+                onOpenChange={setDeleteDialogOpen}
+                title="Excluir Projeto"
+                description={`Tem certeza que deseja excluir o projeto "${projectToDelete?.title}"? Esta ação não pode ser desfeita.`}
+                confirmText="Excluir"
+                cancelText="Cancelar"
+                onConfirm={confirmDelete}
+                variant="destructive"
+            />
         </div>
     );
 }

@@ -3,14 +3,17 @@
 
 import { useEffect, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectCardSkeleton } from "./ProjectCardSkeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { getProjects, Project } from "@/lib/api/projects";
 
 export function PortfolioSection() {
     const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
+        setIsLoading(true);
         getProjects()
             .then((projects: Project[]) => {
                 // Filtra apenas os projetos com featured true e ordena pelo campo order
@@ -19,47 +22,37 @@ export function PortfolioSection() {
                     .sort((a: Project, b: Project) => (a.order ?? 99) - (b.order ?? 99));
                 setFeaturedProjects(filtered);
             })
-            .catch(() => setFeaturedProjects([]));
+            .catch(() => setFeaturedProjects([]))
+            .finally(() => setIsLoading(false));
     }, []);
 
     return (
         <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">
             <section className="py-20 px-4 sm:px-6" id="portfolio">
                 <div className="container mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-16"
-                    >
+                    <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                             Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
                         </h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             Conheça alguns dos nossos projetos mais recentes e veja como transformamos ideias em soluções digitais de alto impacto
                         </p>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-                    >
-                        {featuredProjects.map((project, index) => (
-                            <ProjectCard key={index} project={project} index={index} />
-                        ))}
-                    </motion.div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        {isLoading ? (
+                            // Renderiza 3 skeletons enquanto carrega
+                            Array.from({ length: 3 }).map((_, index) => (
+                                <ProjectCardSkeleton key={index} />
+                            ))
+                        ) : (
+                            featuredProjects.map((project, index) => (
+                                <ProjectCard key={index} project={project} />
+                            ))
+                        )}
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        viewport={{ once: true }}
-                        className="text-center"
-                    >
+                    <div className="text-center">
                         <Link href="/portfolio">
                             <Button
                                 size="lg"
@@ -71,7 +64,7 @@ export function PortfolioSection() {
                                 </svg>
                             </Button>
                         </Link>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
         </div>
