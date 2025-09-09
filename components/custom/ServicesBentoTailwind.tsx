@@ -289,7 +289,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
             backdrop-blur-sm
             transition-all duration-300 ease-out 
             hover:-translate-y-1 hover:shadow-xl 
-            hover:border-purple-500/40 hover:shadow-purple-500/20
+            hover:border-white/40 hover:shadow-white/20
             cursor-pointer
             ${gridClasses}
           `;
@@ -306,7 +306,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                             >
                                 {/* Header com label e ícone */}
                                 <div className="flex justify-between items-start gap-3 relative z-10">
-                                    <div className="text-sm font-medium text-purple-300/90 bg-purple-500/10 px-3 py-1 rounded-full">
+                                    <div className="text-sm font-medium text-gray-200/90 bg-white/10 px-3 py-1 rounded-full">
                                         {service.label}
                                     </div>
                                     <div className="text-3xl transform group-hover:scale-110 transition-transform duration-300">
@@ -316,7 +316,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
 
                                 {/* Conteúdo principal */}
                                 <div className="flex flex-col relative z-10 space-y-3">
-                                    <h3 className="text-xl font-bold text-white group-hover:text-purple-100 transition-colors duration-300 leading-tight">
+                                    <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight">
                                         {service.title}
                                     </h3>
                                     <p className="text-sm text-gray-300/90 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -325,17 +325,17 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                                 </div>
 
                                 {/* Gradiente de fundo sutil */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-gray-300/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                 {/* Borda brilhante no hover */}
                                 {enableBorderGlow && (
                                     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className="absolute inset-px rounded-2xl bg-gradient-to-r from-purple-500/30 via-pink-500/20 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute inset-px rounded-2xl bg-gradient-to-r from-white/30 via-gray-300/20 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     </div>
                                 )}
 
                                 {/* Ponto de luz no canto */}
-                                <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                                <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
                             </ParticleCard>
                         );
                     }
@@ -347,7 +347,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                         >
                             {/* Header com label e ícone */}
                             <div className="flex justify-between items-start gap-3 relative z-10">
-                                <div className="text-sm font-medium text-purple-300/90 bg-purple-500/10 px-3 py-1 rounded-full">
+                                <div className="text-sm font-medium text-gray-200/90 bg-white/10 px-3 py-1 rounded-full">
                                     {service.label}
                                 </div>
                                 <div className="text-3xl transform group-hover:scale-110 transition-transform duration-300">
@@ -357,7 +357,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
 
                             {/* Conteúdo principal */}
                             <div className="flex flex-col relative z-10 space-y-3">
-                                <h3 className="text-xl font-bold text-white group-hover:text-purple-100 transition-colors duration-300 leading-tight">
+                                <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight">
                                     {service.title}
                                 </h3>
                                 <p className="text-sm text-gray-300/90 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -366,17 +366,17 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                             </div>
 
                             {/* Gradiente de fundo sutil */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-gray-300/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             {/* Borda brilhante no hover */}
                             {enableBorderGlow && (
                                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="absolute inset-px rounded-2xl bg-gradient-to-r from-purple-500/30 via-pink-500/20 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute inset-px rounded-2xl bg-gradient-to-r from-white/30 via-gray-300/20 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </div>
                             )}
 
                             {/* Ponto de luz no canto */}
-                            <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                            <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
                         </div>
                     );
                 })}

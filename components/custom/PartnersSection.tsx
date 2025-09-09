@@ -22,7 +22,7 @@ export default function PartnersSection() {
                 <h2
                     className="text-3xl text-center md:text-4xl font-bold text-white mb-16"
                 >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Conexões</span> que Transformam
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">Conexões</span> que Transformam
                 </h2>
 
                 <div
@@ -38,17 +38,17 @@ export default function PartnersSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="relative text-gray-300 text-sm px-5 py-3 bg-gray-800/60 rounded-xl cursor-pointer 
-                                backdrop-blur-sm border border-gray-700/50 hover:border-purple-400/50
+                                backdrop-blur-sm border border-gray-700/50 hover:border-white/50
                                 transition-all duration-200 group overflow-hidden hover:bg-gray-800/80
-                                hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
+                                hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10"
                             >
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(167,139,250,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-purple-400/30 transition-all duration-300" />
+                                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-white/30 transition-all duration-300" />
 
                                 <span className="relative z-10 font-medium">{partner.name}</span>
 
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-pink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-800/10 to-gray-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </Link>
                         </div>
                     ))}

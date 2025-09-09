@@ -31,7 +31,7 @@ export function PortfolioSection() {
             <div className="container mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
+                        Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Destacados</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         Conheça alguns dos nossos projetos mais recentes e veja como transformamos ideias em soluções digitais de alto impacto
@@ -55,7 +55,7 @@ export function PortfolioSection() {
                     <Link href="/portfolio">
                         <Button
                             size="lg"
-                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                            className="cursor-pointer bg-gradient-to-r from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
                         >
                             Ver Todos os Projetos
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

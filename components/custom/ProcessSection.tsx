@@ -43,12 +43,12 @@ export function ProcessSection() {
                     className="text-center mb-16"
                 >
                     <div>
-                        <Badge variant="outline" className="mb-4 bg-gray-800 text-purple-300 border-purple-500/50">
+                        <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
                             Metodologia Comprovada
                         </Badge>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Processo de <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Trabalho</span>
+                        Processo de <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Trabalho</span>
                     </h2>
                     <p
                         className="text-lg text-gray-400 max-w-2xl mx-auto"
@@ -64,11 +64,11 @@ export function ProcessSection() {
                         <div
                             key={index}
                         >
-                            <Card className="h-full bg-gray-800/50 border-gray-700 hover:border-purple-500/30 transition-colors group">
+                            <Card className="h-full bg-gray-800/50 border-gray-700 hover:border-white/30 transition-colors group">
                                 <CardHeader>
                                     <div className="flex items-center gap-4">
                                         <div
-                                            className="text-2xl p-3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg"
+                                            className="text-2xl p-3 bg-gradient-to-br from-white/20 to-gray-300/20 rounded-lg"
                                         >
                                             {step.icon}
                                         </div>
@@ -76,7 +76,7 @@ export function ProcessSection() {
                                             <CardTitle className="text-white flex items-center gap-2">
                                                 {step.title}
                                                 <div>
-                                                    <ChevronRight className="w-5 h-5 text-purple-300" />
+                                                    <ChevronRight className="w-5 h-5 text-gray-300" />
                                                 </div>
                                             </CardTitle>
                                             <CardDescription className="text-gray-400 mt-1">
@@ -94,7 +94,7 @@ export function ProcessSection() {
                                                 key={i}
                                                 className="flex items-start"
                                             >
-                                                <span className="text-purple-400 mr-2">•</span>
+                                                <span className="text-white mr-2">•</span>
                                                 <span className="text-gray-400 text-sm">{item}</span>
                                             </li>
                                         ))}

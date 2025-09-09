@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FiGithub, FiInstagram, FiLinkedin, FiX } from 'react-icons/fi';
@@ -29,37 +28,16 @@ export default function Header() {
     return (
         <>
             <header
-                className="flex justify-between items-center py-2 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-blur-md bg-black/30 shadow-lg sticky top-0 z-50"
+                className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-blur-md bg-black/30 shadow-lg sticky top-0 z-50 border-b border-white/10"
             >
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center">
                         <div className="relative group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-full scale-0 opacity-0 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700 blur-xl group-hover:blur-2xl"></div>
-
-                            {/* <div className="absolute inset-0 border-2 border-transparent rounded-full group-hover:border-white/30 group-hover:scale-105 transition-all duration-500"></div> */}                        <div className="relative transition-all duration-500 px-6 group-hover:scvale-110 ">
-                                <Image
-                                    src="/LogoBrainKadmo.svg"
-                                    alt="Logo"
-                                    width={100}
-                                    height={100}
-                                    className="transition-all duration-500 rounded-full
-                                    group-hover:brightness-110 
-                                    group-hover:drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]
-                                    group-hover:scale-110
-                                    group-active:scale-100"
-                                />
-                            </div>
-
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                {[...Array(5)].map((_, i) => (
-                                    <div key={i} className={`absolute w-1 h-1 bg-white rounded-full 
-                ${i % 2 === 0 ? 'animate-float-up' : 'animate-float-down'}`}
-                                        style={{
-                                            left: `${Math.random() * 80 + 10}%`,
-                                            top: `${Math.random() * 80 + 10}%`,
-                                            animationDelay: `${i * 0.2}s`
-                                        }}></div>
-                                ))}
+                            <div className="relative transition-all duration-500 px-2">
+                                <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+                                    Kadmo
+                                </span>
+                                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-500"></div>
                             </div>
                         </div>
                     </Link>
@@ -80,7 +58,7 @@ export default function Header() {
                                     className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
                                 >
                                     {link.label}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
                                 </button>
                             ) : (
                                 <button
@@ -88,7 +66,7 @@ export default function Header() {
                                     className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
                                 >
                                     {link.label}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
                                 </button>
                             )}
                         </div>

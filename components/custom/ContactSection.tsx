@@ -56,11 +56,11 @@ export function ContactSection() {
         <section className="w-full py-5 pb-24 relative overflow-hidden" id="contact">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <Badge variant="outline" className="mb-4 bg-gray-800 text-purple-300 border-purple-500/50">
+                    <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
                         Vamos conversar
                     </Badge>
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Contato</span>
+                        Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Contato</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                         Pronto para transformar sua ideia em realidade? Envie uma mensagem ou me encontre nas redes.
@@ -69,10 +69,10 @@ export function ContactSection() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                        <Card className="bg-gray-800/50 border-gray-700 hover:border-purple-500/30 transition-colors h-full">
+                        <Card className="bg-gray-800/50 border-gray-700 hover:border-white/30 transition-colors h-full">
                             <CardHeader>
                                 <CardTitle className="text-white flex items-center gap-2">
-                                    <Mail className="w-5 h-5 text-purple-300" />
+                                    <Mail className="w-5 h-5 text-gray-300" />
                                     Envie uma mensagem
                                 </CardTitle>
                             </CardHeader>
@@ -83,7 +83,7 @@ export function ContactSection() {
                                             type="text"
                                             name="name"
                                             placeholder="Seu nome"
-                                            className="bg-gray-300 border-gray-600 focus:border-purple-500"
+                                            className="bg-gray-300 border-gray-600 focus:border-white"
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
@@ -94,7 +94,7 @@ export function ContactSection() {
                                             type="email"
                                             name="email"
                                             placeholder="Seu e-mail"
-                                            className="bg-gray-300 border-gray-600 focus:border-purple-500"
+                                            className="bg-gray-300 border-gray-600 focus:border-white"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
@@ -105,7 +105,7 @@ export function ContactSection() {
                                             name="message"
                                             placeholder="Sua mensagem"
                                             rows={5}
-                                            className="bg-gray-300 border-gray-600 focus:border-purple-500 md:min-h-52"
+                                            className="bg-gray-300 border-gray-600 focus:border-white md:min-h-52"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
@@ -120,7 +120,7 @@ export function ContactSection() {
                                     <div>
                                         <Button
                                             type="submit"
-                                            className="w-full bg-gradient-to-r cursor-pointer from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                                            className="w-full bg-gradient-to-r cursor-pointer from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black"
                                             disabled={isSubmitting}
                                         >
                                             {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
@@ -133,25 +133,25 @@ export function ContactSection() {
 
                     <div className="space-y-6">
                         <div>
-                            <Card className="bg-gray-800/50 border-gray-700 hover:border-purple-500/30 transition-colors">
+                            <Card className="bg-gray-800/50 border-gray-700 hover:border-white/30 transition-colors">
                                 <CardContent className="p-6">
                                     <div className="space-y-6">
                                         <div className="flex items-start gap-4">
-                                            <Phone className="w-5 h-5 mt-1 text-purple-300" />
+                                            <Phone className="w-5 h-5 mt-1 text-gray-300" />
                                             <div>
                                                 <h3 className="font-medium text-white">Telefone</h3>
                                                 <p className="text-gray-400">(73) 99154-8689</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-4">
-                                            <Mail className="w-5 h-5 mt-1 text-purple-300" />
+                                            <Mail className="w-5 h-5 mt-1 text-gray-300" />
                                             <div>
                                                 <h3 className="font-medium text-white">E-mail</h3>
                                                 <p className="text-gray-400">gabryel.kadmo@mx2tech.com.br</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-4">
-                                            <MessageSquare className="w-5 h-5 mt-1 text-purple-300" />
+                                            <MessageSquare className="w-5 h-5 mt-1 text-gray-300" />
                                             <div>
                                                 <h3 className="font-medium text-white">Redes Sociais</h3>
                                                 <div className="flex gap-4 mt-2">
@@ -159,7 +159,7 @@ export function ContactSection() {
                                                         href="https://www.linkedin.com/in/gabryel-kadmo/"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-gray-400 hover:text-indigo-400 transition-colors"
+                                                        className="text-gray-400 hover:text-white transition-colors"
                                                     >
                                                         <LinkedinIcon className="w-6 h-6" />
                                                     </a>
@@ -167,7 +167,7 @@ export function ContactSection() {
                                                         href="https://github.com/GabryelKadmo"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-gray-400 hover:text-indigo-400 transition-colors"
+                                                        className="text-gray-400 hover:text-white transition-colors"
                                                     >
                                                         <Github className="w-6 h-6" />
                                                     </a>

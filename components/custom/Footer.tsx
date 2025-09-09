@@ -30,7 +30,7 @@ export function Footer() {
                         className="flex flex-col items-start"
                     >
                         <div className="mb-6">
-                            <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent cursor-pointer">
+                            <div className="text-4xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent cursor-pointer">
                                 <Image
                                     src="/Kdm-Logo.png"
                                     alt="Logo Gabryel Kadmo"
@@ -57,7 +57,7 @@ export function Footer() {
                                 >
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 hover:text-purple-400 transition-colors"
+                                        className="text-gray-400 hover:text-white transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -70,13 +70,13 @@ export function Footer() {
                         <h3 className="text-lg font-semibold text-white mb-6">Serviços</h3>
                         <ul className="space-y-3">
                             <li>
-                                <span className="text-gray-400 hover:text-purple-400 transition-colors cursor-pointer">UI/UX Design</span>
+                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">UI/UX Design</span>
                             </li>
                             <li>
-                                <span className="text-gray-400 hover:text-purple-400 transition-colors cursor-pointer">Desenvolvimento Front-end</span>
+                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Desenvolvimento Front-end</span>
                             </li>
                             <li>
-                                <span className="text-gray-400 hover:text-purple-400 transition-colors cursor-pointer">Sistemas Sob Medida</span>
+                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Sistemas Sob Medida</span>
                             </li>
                         </ul>
                     </div>
@@ -87,13 +87,13 @@ export function Footer() {
                             <li
                                 className="flex items-center gap-2"
                             >
-                                <Mail className="w-4 h-4 text-purple-400" />
+                                <Mail className="w-4 h-4 text-white" />
                                 <span className="text-gray-400">gabryel.kadmo@mx2tech.com.br</span>
                             </li>
                             <li
                                 className="flex items-center gap-2"
                             >
-                                <Phone className="w-4 h-4 text-purple-400" />
+                                <Phone className="w-4 h-4 text-white" />
                                 <span className="text-gray-400">(73) 99154-8689</span>
                             </li>
                             <li
@@ -105,7 +105,7 @@ export function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-purple-400 transition-colors hover:-translate-y-1 hover:scale-110"
+                                        className="text-gray-400 hover:text-white transition-colors hover:-translate-y-1 hover:scale-110"
                                     >
                                         {social.icon}
                                     </a>

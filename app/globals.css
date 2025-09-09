@@ -208,12 +208,12 @@
     background-image:
       radial-gradient(
         circle at 25% 25%,
-        rgba(139, 92, 246, 0.05) 0%,
+        rgba(255, 255, 255, 0.03) 0%,
         transparent 25%
       ),
       radial-gradient(
         circle at 75% 75%,
-        rgba(99, 102, 241, 0.05) 0%,
+        rgba(255, 255, 255, 0.03) 0%,
         transparent 25%
       );
     pointer-events: none;
@@ -232,7 +232,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #8b5cf6, #ec4899, #f59e0b);
+    background: linear-gradient(45deg, #ffffff, #d1d5db, #9ca3af);
     background-size: 200% 200%;
     border-radius: 10px;
     border: 3px solid #0f172a;
@@ -257,7 +257,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #8b5cf6 #0f172a;
+    scrollbar-color: #ffffff #0f172a;
   }
 }
 
