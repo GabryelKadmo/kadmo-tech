@@ -4,22 +4,44 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { FiGithub, FiInstagram, FiLinkedin, FiX } from 'react-icons/fi';
 import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    const handleLogoClick = () => {
+        if (pathname === '/') {
+            // Se já estiver na home, faz scroll smooth para o topo
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        } else {
+            // Se estiver em outra rota, redireciona para a home
+            window.location.href = '/';
         }
+    };
+
+    const handleNavigation = (sectionId: string) => {
+        if (pathname === '/') {
+            // Se já estiver na home, faz scroll para a seção
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // Se estiver em outra rota, redireciona para home + seção
+            window.location.href = `/#${sectionId}`;
+        }
+
         // Fecha o menu mobile se estiver aberto
         if (isMenuOpen) {
             setIsMenuOpen(false);
@@ -32,7 +54,7 @@ export default function Header() {
                 className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-blur-md bg-black/30 shadow-lg sticky top-0 z-50 border-b border-white/10"
             >
                 <div className="flex items-center">
-                    <Link href="/" className="flex items-center">
+                    <button onClick={handleLogoClick} className="flex items-center cursor-pointer">
                         <div className="relative group">
                             <div className="relative transition-all duration-300 px-2">
                                 <Image
@@ -45,36 +67,24 @@ export default function Header() {
                                 />
                             </div>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <nav
                     className="hidden lg:flex space-x-6 lg:space-x-8 text-white/90"
                 >
                     {[
-                        { id: "inicio", label: "Início", href: "/#hero" },
+                        { id: "hero", label: "Início" },
                         { id: "portfolio", label: "Portfólio" },
                         { id: "contact", label: "Contato" },
                         { id: "partners", label: "Parceiros" },
                     ].map((link) => (
-                        <div key={link.id}>
-                            {link.id === "inicio" ? (
-                                <button
-                                    onClick={() => window.location.href = "/#hero"}
-                                    className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
-                                >
-                                    {link.label}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
-                                </button>
-                            ) : (
-                                <button
-                                    onClick={() => scrollToSection(link.id)}
-                                    className="cursor-pointer relative group px-2 py-1 hover:text-white transition-colors duration-300"
-                                >
-                                    {link.label}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
-                                </button>
-                            )}
-                        </div>
+                        <button
+                            key={link.id}
+                            onClick={() => handleNavigation(link.id)}
+                            className="cursor-pointer px-2 py-1 hover:text-white transition-colors duration-300"
+                        >
+                            {link.label}
+                        </button>
                     ))}
                 </nav>
                 {/* Burger Menu Button */}
@@ -153,7 +163,7 @@ export default function Header() {
                             ].map((link) => (
                                 <button
                                     key={link.id}
-                                    onClick={() => scrollToSection(link.id)}
+                                    onClick={() => handleNavigation(link.id)}
                                     className="block w-full text-left p-3 rounded-lg bg-gray-800/40 hover:bg-gray-700/60 text-white transition-colors duration-300"
                                 >
                                     {link.label}
