@@ -27,46 +27,44 @@ export function PortfolioSection() {
     }, []);
 
     return (
-        <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 border-gray-800">
-            <section className="py-20 px-4 sm:px-6" id="portfolio">
-                <div className="container mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                            Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
-                        </h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                            Conheça alguns dos nossos projetos mais recentes e veja como transformamos ideias em soluções digitais de alto impacto
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                        {isLoading ? (
-                            // Renderiza 3 skeletons enquanto carrega
-                            Array.from({ length: 3 }).map((_, index) => (
-                                <ProjectCardSkeleton key={index} />
-                            ))
-                        ) : (
-                            featuredProjects.map((project, index) => (
-                                <ProjectCard key={index} project={project} />
-                            ))
-                        )}
-                    </div>
-
-                    <div className="text-center">
-                        <Link href="/portfolio">
-                            <Button
-                                size="lg"
-                                className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                            >
-                                Ver Todos os Projetos
-                                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </Button>
-                        </Link>
-                    </div>
+        <section className="py-20 px-4 sm:px-6" id="portfolio">
+            <div className="container mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                        Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Destacados</span>
+                    </h2>
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                        Conheça alguns dos nossos projetos mais recentes e veja como transformamos ideias em soluções digitais de alto impacto
+                    </p>
                 </div>
-            </section>
-        </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    {isLoading ? (
+                        // Renderiza 3 skeletons enquanto carrega
+                        Array.from({ length: 3 }).map((_, index) => (
+                            <ProjectCardSkeleton key={index} />
+                        ))
+                    ) : (
+                        featuredProjects.map((project, index) => (
+                            <ProjectCard key={index} project={project} />
+                        ))
+                    )}
+                </div>
+
+                <div className="text-center">
+                    <Link href="/portfolio">
+                        <Button
+                            size="lg"
+                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        >
+                            Ver Todos os Projetos
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+        </section>
     );
 }

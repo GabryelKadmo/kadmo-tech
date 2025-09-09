@@ -53,12 +53,7 @@ export function ContactSection() {
     };
 
     return (
-        <section className="w-full py-5 pb-24 bg-gradient-to-l from-gray-900 to-black relative overflow-hidden" id="contact">
-            <div id="contact" className="absolute inset-0 opacity-10 overflow-hidden">
-                <div className="absolute top-0 left-1/4 w-32 h-32 bg-purple-500 rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-30 right-1/3 w-48 h-48 bg-pink-500 rounded-full filter blur-3xl"></div>
-            </div>
-
+        <section className="w-full py-5 pb-24 relative overflow-hidden" id="contact">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
                     <Badge variant="outline" className="mb-4 bg-gray-800 text-purple-300 border-purple-500/50">
