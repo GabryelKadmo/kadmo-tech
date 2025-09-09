@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FiGithub, FiInstagram, FiLinkedin, FiX } from 'react-icons/fi';
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,11 +34,15 @@ export default function Header() {
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center">
                         <div className="relative group">
-                            <div className="relative transition-all duration-500 px-2">
-                                <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
-                                    Kadmo
-                                </span>
-                                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-500"></div>
+                            <div className="relative transition-all duration-300 px-2">
+                                <Image
+                                    src="/Kdm-Logo.png"
+                                    alt="Kadmo Tech Logo"
+                                    width={180}
+                                    height={180}
+                                    className="rounded-full transition-all duration-300 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                    priority
+                                />
                             </div>
                         </div>
                     </Link>
