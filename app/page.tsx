@@ -6,7 +6,8 @@ import PartnersSection from '@/components/custom/PartnersSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
 import { ProcessSection } from '@/components/custom/ProcessSection'
 import { ServicesSection } from '@/components/custom/ServicesSection'
-import { StatsSection } from '@/components/custom/StatsSection'
+import SplineRobot from '@/components/SplineRobot'
+// import { StatsSection } from '@/components/custom/StatsSection'
 import React from 'react'
 
 export default function page() {
@@ -18,7 +19,8 @@ export default function page() {
       <PortfolioSection />
       <ProcessSection />
       <ContactSection />
-      <StatsSection />
+      <SplineRobot />
+      {/* <StatsSection /> */}
       <PartnersSection />
       <Footer />
     </div>

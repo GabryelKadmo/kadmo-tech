@@ -58,9 +58,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen`}
       >
-        {children}
+        <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-black/98 to-gray-900/95 -z-10" />
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );
