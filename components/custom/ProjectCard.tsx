@@ -15,15 +15,16 @@ export function ProjectCard({ project }: Omit<ProjectCardProps, 'index'>) {
             onClick={handleCardClick}
         >
             <div className="relative z-0">
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative h-48 w-full overflow-hidden">
                     <Image
                         src={project.image || "/Kdm-Logo.png"}
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-300"
                         style={{
-                            transformOrigin: "center bottom"
+                            transformOrigin: "center center"
                         }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/40 to-transparent" />
                 </div>

@@ -7,14 +7,14 @@ import { Badge } from "@/components/ui/badge";
 const processSteps = [
     {
         title: "Descoberta",
-        description: "Imersão no seu negócio para definir objetivos e KPIs",
+        description: "Imersão no seu negócio para definir objetivos",
         icon: "🔍",
         duration: "1-3 dias",
         deliverables: ["Briefing", "Análise de concorrência", "Mapa de jornada"]
     },
     {
         title: "Design",
-        description: "Criação de interfaces que convertem e encantam",
+        description: "Criação de interfaces que encantam",
         icon: "🎨",
         duration: "2-4 dias",
         deliverables: ["Wireframes", "Prototipação", "Design System"]

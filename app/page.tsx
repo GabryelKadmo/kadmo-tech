@@ -6,6 +6,7 @@ import PartnersSection from '@/components/custom/PartnersSection'
 import { PortfolioSection } from '@/components/custom/PortfolioSection'
 import { ProcessSection } from '@/components/custom/ProcessSection'
 import { ServicesSection } from '@/components/custom/ServicesSection'
+import ScrollVelocity from '@/components/ScrollVelocity'
 // import SplineRobot from '@/components/SplineRobot'
 // import { StatsSection } from '@/components/custom/StatsSection'
 import React from 'react'
@@ -17,6 +18,11 @@ export default function page() {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
+      <ScrollVelocity
+        texts={['Gabryel Kadmo', 'Seja um parceiro']}
+        velocity={100}
+        className="text-white"
+      />
       <ProcessSection />
       <ContactSection />
       {/* <SplineRobot /> */}

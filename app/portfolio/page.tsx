@@ -26,14 +26,14 @@ export default function PortfolioPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="min-h-screen bg-black">
             <Header />
 
             <div className="container mx-auto px-4 sm:px-6 pt-8">
                 {/* Título */}
                 <div className="text-center mb-16">
                     <h1 className="text-5xl font-bold text-white mb-4">
-                        Nosso <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Portfólio</span>
+                        Nosso <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Portfólio</span>
                     </h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         Conheça alguns dos projetos que desenvolvemos com dedicação e inovação para nossos clientes
@@ -60,7 +60,7 @@ export default function PortfolioPage() {
                         Entre em contato conosco e vamos criar algo incrível juntos!
                     </p>
                     <Link href="/#contact">
-                        <Button size="lg" className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                        <Button size="lg" className="cursor-pointer bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             Fale Conosco
                         </Button>
                     </Link>
