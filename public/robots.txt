@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow specific files
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.kadmo.tech/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
