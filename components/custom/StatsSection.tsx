@@ -10,7 +10,7 @@ export function StatsSection() {
 
     return (
         <section className="py-20 relative">
-            <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative">
                 {stats.map((stat, index) => (
                     <div
                         key={index}

@@ -51,88 +51,90 @@ export default function Header() {
     return (
         <>
             <header
-                className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-blur-md bg-black/30 shadow-lg sticky top-0 z-50 border-b border-white/10"
+                className="sticky top-0 z-50 backdrop-blur-md bg-black/30 shadow-lg border-b border-white/10"
             >
-                <div className="flex items-center">
-                    <button onClick={handleLogoClick} className="flex items-center cursor-pointer">
-                        <div className="relative group">
-                            <div className="relative transition-all duration-300 px-2">
-                                <Image
-                                    src="/Kdm-Logo.png"
-                                    alt="Kadmo Tech Logo"
-                                    width={180}
-                                    height={180}
-                                    className="rounded-full transition-all duration-300 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                                    priority
-                                />
+                <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex justify-between items-center">
+                    <div className="flex items-center">
+                        <button onClick={handleLogoClick} className="flex items-center cursor-pointer">
+                            <div className="relative group">
+                                <div className="relative transition-all duration-300 px-2">
+                                    <Image
+                                        src="/Kdm-Logo.png"
+                                        alt="Kadmo Tech Logo"
+                                        width={180}
+                                        height={180}
+                                        className="rounded-full transition-all duration-300 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                        priority
+                                    />
+                                </div>
                             </div>
+                        </button>
+                    </div>
+                    <nav
+                        className="hidden lg:flex space-x-6 lg:space-x-8 text-white/90"
+                    >
+                        {[
+                            { id: "inicio", label: "Início", isHome: true },
+                            { id: "portfolio", label: "Portfólio" },
+                            { id: "contact", label: "Contato" },
+                            { id: "partners", label: "Parceiros" },
+                        ].map((link) => (
+                            <button
+                                key={link.id}
+                                onClick={() => link.isHome ? handleLogoClick() : handleNavigation(link.id)}
+                                className="cursor-pointer px-2 py-1 hover:text-white transition-colors duration-300"
+                            >
+                                {link.label}
+                            </button>
+                        ))}
+                    </nav>
+                    {/* Burger Menu Button */}
+                    <button
+                        className="lg:hidden relative z-[70] p-2 text-white/80 hover:text-white transition-colors duration-300"
+                        onClick={toggleMenu}
+                    >
+                        <div
+                            className="w-6 h-6 flex flex-col justify-center items-center"
+                        >
+                            <span
+                                className={`block h-0.5 w-6 bg-current rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
+                                    }`}
+                            />
+                            <span
+                                className={`block h-0.5 w-6 bg-current rounded-full mt-1 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+                                    }`}
+                            />
+                            <span
+                                className={`block h-0.5 w-6 bg-current rounded-full mt-1 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'
+                                    }`}
+                            />
                         </div>
                     </button>
-                </div>
-                <nav
-                    className="hidden lg:flex space-x-6 lg:space-x-8 text-white/90"
-                >
-                    {[
-                        { id: "inicio", label: "Início", isHome: true },
-                        { id: "portfolio", label: "Portfólio" },
-                        { id: "contact", label: "Contato" },
-                        { id: "partners", label: "Parceiros" },
-                    ].map((link) => (
-                        <button
-                            key={link.id}
-                            onClick={() => link.isHome ? handleLogoClick() : handleNavigation(link.id)}
-                            className="cursor-pointer px-2 py-1 hover:text-white transition-colors duration-300"
-                        >
-                            {link.label}
-                        </button>
-                    ))}
-                </nav>
-                {/* Burger Menu Button */}
-                <button
-                    className="lg:hidden relative z-[70] p-2 text-white/80 hover:text-white transition-colors duration-300"
-                    onClick={toggleMenu}
-                >
-                    <div
-                        className="w-6 h-6 flex flex-col justify-center items-center"
+                    <nav
+                        className="hidden lg:flex space-x-4 md:space-x-5"
                     >
-                        <span
-                            className={`block h-0.5 w-6 bg-current rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
-                                }`}
-                        />
-                        <span
-                            className={`block h-0.5 w-6 bg-current rounded-full mt-1 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'
-                                }`}
-                        />
-                        <span
-                            className={`block h-0.5 w-6 bg-current rounded-full mt-1 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'
-                                }`}
-                        />
-                    </div>
-                </button>
-                <nav
-                    className="hidden lg:flex space-x-4 md:space-x-5"
-                >
-                    {[
-                        { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-gray-300" },
-                        { icon: <FaWhatsapp size={24} />, href: "https://abrir.link/RKPeG", color: "hover:text-green-400" },
-                        { icon: <FiGithub size={24} />, href: "https://github.com/GabryelKadmo", color: "hover:text-gray-300" },
-                        { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-gray-300" }
-                    ].map((social, index) => (
-                        <div key={index}>
-                            <Link
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`text-white/80 ${social.color} transition-all duration-300 hover:scale-110`}
-                                aria-label={social.href.includes("instagram") ? "Instagram" :
-                                    social.href.includes("wa.me") ? "Whatsapp" :
-                                        social.href.includes("github") ? "GitHub" : "LinkedIn"}
-                            >
-                                {social.icon}
-                            </Link>
-                        </div>
-                    ))}
-                </nav>
+                        {[
+                            { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-gray-300" },
+                            { icon: <FaWhatsapp size={24} />, href: "https://abrir.link/RKPeG", color: "hover:text-green-400" },
+                            { icon: <FiGithub size={24} />, href: "https://github.com/GabryelKadmo", color: "hover:text-gray-300" },
+                            { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-gray-300" }
+                        ].map((social, index) => (
+                            <div key={index}>
+                                <Link
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`text-white/80 ${social.color} transition-all duration-300 hover:scale-110`}
+                                    aria-label={social.href.includes("instagram") ? "Instagram" :
+                                        social.href.includes("wa.me") ? "Whatsapp" :
+                                            social.href.includes("github") ? "GitHub" : "LinkedIn"}
+                                >
+                                    {social.icon}
+                                </Link>
+                            </div>
+                        ))}
+                    </nav>
+                </div>
             </header>
 
             {/* Mobile Menu Overlay - Simplified */}

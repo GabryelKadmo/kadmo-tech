@@ -45,9 +45,9 @@ export default function LandingPage() {
       </div>
 
       <div
-        className="relative z-20 min-h-full flex flex-col items-center justify-center gap-10 px-6 md:px-12 lg:px-24 py-20"
+        className="relative z-20 min-h-full flex flex-col items-center justify-center gap-10 py-20"
       >
-        <div className="w-full flex flex-col items-center text-center space-y-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full flex flex-col items-center text-center space-y-8">
           <h1
             className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight max-w-5xl cursor-pointer"
             style={{

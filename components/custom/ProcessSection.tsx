@@ -38,7 +38,7 @@ const processSteps = [
 export function ProcessSection() {
     return (
         <section id="process" className="w-full pt-20 pb-10 relative">
-            <div className="container mx-auto px-4 relative">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
                 <div
                     className="text-center mb-16"
                 >

@@ -54,7 +54,7 @@ export function ContactSection() {
 
     return (
         <section className="w-full py-5 pb-24 relative overflow-hidden" id="contact">
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
                         Vamos conversar
