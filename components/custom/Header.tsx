@@ -73,14 +73,14 @@ export default function Header() {
                     className="hidden lg:flex space-x-6 lg:space-x-8 text-white/90"
                 >
                     {[
-                        { id: "hero", label: "Início" },
+                        { id: "inicio", label: "Início", isHome: true },
                         { id: "portfolio", label: "Portfólio" },
                         { id: "contact", label: "Contato" },
                         { id: "partners", label: "Parceiros" },
                     ].map((link) => (
                         <button
                             key={link.id}
-                            onClick={() => handleNavigation(link.id)}
+                            onClick={() => link.isHome ? handleLogoClick() : handleNavigation(link.id)}
                             className="cursor-pointer px-2 py-1 hover:text-white transition-colors duration-300"
                         >
                             {link.label}
@@ -113,10 +113,10 @@ export default function Header() {
                     className="hidden lg:flex space-x-4 md:space-x-5"
                 >
                     {[
-                        { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-pink-500" },
+                        { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-gray-300" },
                         { icon: <FaWhatsapp size={24} />, href: "https://abrir.link/RKPeG", color: "hover:text-green-400" },
                         { icon: <FiGithub size={24} />, href: "https://github.com/GabryelKadmo", color: "hover:text-gray-300" },
-                        { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-blue-400" }
+                        { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-gray-300" }
                     ].map((social, index) => (
                         <div key={index}>
                             <Link
@@ -157,13 +157,23 @@ export default function Header() {
 
                         <div className="space-y-4">
                             {[
+                                { id: "inicio", label: "Início", isHome: true },
                                 { id: "portfolio", label: "Portfólio" },
                                 { id: "contact", label: "Contato" },
                                 { id: "partners", label: "Parceiros" },
                             ].map((link) => (
                                 <button
                                     key={link.id}
-                                    onClick={() => handleNavigation(link.id)}
+                                    onClick={() => {
+                                        if (link.isHome) {
+                                            handleLogoClick();
+                                        } else {
+                                            handleNavigation(link.id);
+                                        }
+                                        if (isMenuOpen) {
+                                            setIsMenuOpen(false);
+                                        }
+                                    }}
                                     className="block w-full text-left p-3 rounded-lg bg-gray-800/40 hover:bg-gray-700/60 text-white transition-colors duration-300"
                                 >
                                     {link.label}

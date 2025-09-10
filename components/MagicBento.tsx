@@ -26,42 +26,42 @@ export interface BentoProps {
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
-const DEFAULT_GLOW_COLOR = '132, 0, 255';
+const DEFAULT_GLOW_COLOR = '255, 255, 255';
 const MOBILE_BREAKPOINT = 768;
 
 const cardData: BentoCardProps[] = [
   {
-    color: '#060010',
+    color: '#000000',
     title: 'UI/UX Design',
     description: 'Interfaces intuitivas e modernas com foco na jornada do usuário',
     label: '🎨 Design'
   },
   {
-    color: '#060010',
+    color: '#000000',
     title: 'Front-end Development',
     description: 'Sites performáticos com React, Next.js & Angular',
     label: '💻 Desenvolvimento'
   },
   {
-    color: '#060010',
+    color: '#000000',
     title: 'Sistemas Sob Medida',
     description: 'Soluções escaláveis para problemas específicos',
     label: '⚙️ Customização'
   },
   {
-    color: '#060010',
+    color: '#000000',
     title: 'Consultoria Digital',
     description: 'Estratégias digitais para impulsionar seu negócio',
     label: '🧠 Estratégia'
   },
   {
-    color: '#060010',
+    color: '#000000',
     title: 'Performance & SEO',
     description: 'Otimização e velocidade de aplicações web',
     label: '⚡ Velocidade'
   },
   {
-    color: '#060010',
+    color: '#000000',
     title: 'Suporte & Manutenção',
     description: 'Evolução contínua e suporte técnico especializado',
     label: '🛠️ Manutenção'
@@ -542,8 +542,8 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-intensity: 0;
             --glow-radius: 200px;
             --glow-color: ${glowColor};
-            --border-color: #392e4e;
-            --background-dark: #060010;
+            --border-color: #333333;
+            --background-dark: #000000;
             --white: hsl(0, 0%, 100%);
             --purple-primary: rgba(255, 255, 255, 1);
             --purple-glow: rgba(255, 255, 255, 0.2);
@@ -608,7 +608,7 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .card--border-glow:hover {
-            box-shadow: 0 4px 20px rgba(46, 24, 78, 0.4), 0 0 30px rgba(${glowColor}, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(${glowColor}, 0.2);
           }
           
           .particle::before {
@@ -624,7 +624,7 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .particle-container:hover {
-            box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(${glowColor}, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(${glowColor}, 0.2);
           }
           
           .text-clamp-1 {

@@ -15,7 +15,7 @@ export function StatsSection() {
                     <div
                         key={index}
                     >
-                        <p className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <p className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
                             {stat.value}
                         </p>
                         <p className="mt-2 text-gray-300">{stat.label}</p>

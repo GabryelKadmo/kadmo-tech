@@ -48,8 +48,8 @@ export function AlertDialog({
                                 </svg>
                             </div>
                         ) : (
-                            <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
@@ -72,7 +72,7 @@ export function AlertDialog({
                         onClick={handleConfirm}
                         className={variant === "destructive"
                             ? "bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
-                            : "bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-lg font-medium shadow-lg hover:scale-105 transition-all"
+                            : "bg-gradient-to-r from-gray-700 to-gray-900 text-white px-6 py-2 rounded-lg font-medium shadow-lg hover:scale-105 transition-all"
                         }
                     >
                         {confirmText}

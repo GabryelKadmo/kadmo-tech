@@ -15,7 +15,7 @@ export const Switch: React.FC<SwitchProps> = ({ checked, onCheckedChange, id, cl
             aria-checked={checked}
             tabIndex={0}
             id={id}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 ${checked ? "bg-purple-600" : "bg-gray-600"} ${className || ""}`}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 ${checked ? "bg-gray-600" : "bg-gray-600"} ${className || ""}`}
             onClick={() => onCheckedChange(!checked)}
         >
             <span
