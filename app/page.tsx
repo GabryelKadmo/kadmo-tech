@@ -19,7 +19,7 @@ export default function page() {
       <ServicesSection />
       <PortfolioSection />
       <ScrollVelocity
-        texts={['Gabryel Kadmo', 'Seja um parceiro']}
+        texts={['Gabryel Kadmo', 'Front-end Developer']}
         velocity={100}
         className="text-white"
       />

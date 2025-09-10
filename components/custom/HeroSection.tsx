@@ -23,21 +23,6 @@ export default function LandingPage() {
         />
       </div>
 
-      {/* Gradient fade overlay melhorado para transição suave */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-15">
-        {/* Gradiente principal */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
-
-        {/* Gradiente secundário para mais suavidade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-
-        {/* Efeito de blur sutil */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-900/90 to-transparent backdrop-blur-[1px]" />
-
-        {/* Pattern decorativo sutil */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
       {/* Elementos decorativos sutis */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-[100px]" />
