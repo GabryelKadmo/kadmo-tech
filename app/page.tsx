@@ -18,11 +18,13 @@ export default function page() {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
-      <ScrollVelocity
-        texts={['Gabryel Kadmo', 'Front-end Developer']}
-        velocity={100}
-        className="text-white"
-      />
+      <div className='my-20'>
+        <ScrollVelocity
+          texts={['Gabryel Kadmo', 'Front-end Developer']}
+          velocity={100}
+          className="text-white"
+        />
+      </div>
       <ProcessSection />
       <ContactSection />
       {/* <SplineRobot /> */}
