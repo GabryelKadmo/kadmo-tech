@@ -120,7 +120,7 @@ export function ProcessSection() {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                                 {/* Card da etapa */}
                                 <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/95 border-gray-700/60 backdrop-blur-sm">
+                                    <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/95 border-gray-700/60 backdrop-blur-sm gap-0">
                                         <CardHeader className="pb-6">
                                             <div className="flex items-start gap-4">
                                                 <div className="p-4 bg-gradient-to-br from-white/15 to-gray-300/15 rounded-xl border border-white/10">
@@ -162,7 +162,7 @@ export function ProcessSection() {
                                             enableBlur={false}
                                             baseRotation={0.5}
                                             blurStrength={1}
-                                            textClassName="text-white/90 text-lg leading-relaxed"
+                                            textClassName="text-white leading-relaxed text-[42px]"
                                         >
                                             {getStepDescription(index)}
                                         </ScrollReveal>
