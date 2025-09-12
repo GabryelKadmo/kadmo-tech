@@ -32,6 +32,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 }) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
+  // Detectar se é mobile para otimizar animações
+  const isMobile = useMemo(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth < 768;
+  }, []);
+
   const splitText = useMemo(() => {
     const text = typeof children === 'string' ? children : '';
     return text.split(/(\s+)/).map((word, index) => {
@@ -50,9 +56,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     const scroller = scrollContainerRef && scrollContainerRef.current ? scrollContainerRef.current : window;
 
+    // Reduzir rotação no mobile para melhor performance
+    const rotationValue = isMobile ? Math.min(baseRotation, 1) : baseRotation;
+
     gsap.fromTo(
       el,
-      { transformOrigin: '0% 50%', rotate: baseRotation },
+      { transformOrigin: '0% 50%', rotate: rotationValue },
       {
         ease: 'none',
         rotate: 0,
@@ -74,7 +83,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       {
         ease: 'none',
         opacity: 1,
-        stagger: 0.05,
+        stagger: isMobile ? 0.02 : 0.05, // Stagger mais rápido no mobile
         scrollTrigger: {
           trigger: el,
           scroller,
@@ -85,14 +94,17 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       }
     );
 
+    // Aplicar blur apenas se habilitado e reduzir intensidade no mobile
     if (enableBlur) {
+      const blurValue = isMobile ? Math.min(blurStrength, 2) : blurStrength;
+
       gsap.fromTo(
         wordElements,
-        { filter: `blur(${blurStrength}px)` },
+        { filter: `blur(${blurValue}px)` },
         {
           ease: 'none',
           filter: 'blur(0px)',
-          stagger: 0.05,
+          stagger: isMobile ? 0.02 : 0.05,
           scrollTrigger: {
             trigger: el,
             scroller,
@@ -107,11 +119,11 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
+  }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength, isMobile]);
 
   return (
-    <h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
-      <p className={`leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
+    <h2 ref={containerRef} className={`my-3 md:my-5 ${containerClassName}`}>
+      <p className={`leading-[1.4] md:leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
     </h2>
   );
 };

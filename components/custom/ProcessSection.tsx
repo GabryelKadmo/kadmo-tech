@@ -2,13 +2,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import ScrollReveal from "@/components/ScrollReveal";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Search, Palette, Code, Rocket } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const processSteps = [
     {
@@ -42,110 +36,75 @@ const processSteps = [
 ];
 
 export function ProcessSection() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const stepsRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        const section = sectionRef.current;
-        if (!section) return;
-
-        // Animar cada step card individualmente
-        stepsRefs.current.forEach((stepRef) => {
-            if (!stepRef) return;
-
-            // Configurar estado inicial
-            gsap.set(stepRef, {
-                opacity: 0,
-                y: 50,
-                rotateX: -10
-            });
-
-            // Criar animação de entrada
-            gsap.to(stepRef, {
-                opacity: 1,
-                y: 0,
-                rotateX: 0,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: stepRef,
-                    start: "top bottom-=100px",
-                    end: "bottom center",
-                    toggleActions: "play none none reverse",
-                    scrub: false
-                }
-            });
-        });
-
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, []);
-
     return (
-        <section ref={sectionRef} id="process" className="w-full py-20 px-4 md:px-6 lg:px-8">
+        <section id="process" className="w-full py-8 lg:mb-14 sm:py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-20">
-                    <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
+                <div className="text-center mb-8 md:mb-16 lg:mb-20">
+                    <Badge variant="outline" className="mb-3 md:mb-4 bg-gray-800 text-gray-200 border-white/50">
                         Metodologia Comprovada
                     </Badge>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-glow-effect">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 text-glow-effect">
                         Processo de <span className="text-glow-effect">Trabalho</span>
                     </h2>
-                    <p className="text-lg text-white max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-white max-w-2xl mx-auto px-4">
                         Transparência em cada etapa para entregas previsíveis e de alta qualidade
                     </p>
                 </div>
 
                 {/* Conteúdo das etapas */}
-                <div className="space-y-24">
+                <div className="space-y-8 md:space-y-12 lg:space-y-16">
                     {processSteps.map((step, index) => (
                         <div
                             key={index}
-                            ref={(el) => { stepsRefs.current[index] = el; }}
-                            className="relative"
+                            className="group"
+                            style={{
+                                animationDelay: `${index * 100}ms`
+                            }}
                         >
-                            <ScrollReveal
-                                baseOpacity={0.3}
-                                enableBlur={true}
-                                baseRotation={1}
-                                blurStrength={2}
-                                containerClassName="mb-12"
-                                textClassName="text-white/90 text-2xl md:text-3xl font-semibold"
-                            >
-                                Etapa {index + 1}: {step.title}
-                            </ScrollReveal>
+                            {/* Título da etapa */}
+                            <div className="mb-6 md:mb-8">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/90 mb-2">
+                                    Etapa {index + 1}: {step.title}
+                                </h3>
+                                <div className="w-16 h-1 bg-gradient-to-r from-white/60 to-transparent rounded-full"></div>
+                            </div>
 
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
                                 {/* Card da etapa */}
-                                <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/95 border-gray-700/60 backdrop-blur-sm gap-0">
-                                        <CardHeader className="pb-6">
+                                <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl`}>
+                                    <Card className="h-full bg-gradient-to-br from-gray-900/90 to-black/95 border-gray-700/60 backdrop-blur-sm shadow-xl">
+                                        <CardHeader className="pb-4 md:pb-6 px-6">
                                             <div className="flex items-start gap-4">
-                                                <div className="p-4 bg-gradient-to-br from-white/15 to-gray-300/15 rounded-xl border border-white/10">
-                                                    <step.icon className="w-8 h-8 text-white" />
+                                                <div className="p-4 bg-gradient-to-br from-white/20 to-gray-300/20 rounded-xl border border-white/20 flex-shrink-0 shadow-lg">
+                                                    <step.icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
                                                 </div>
-                                                <div className="flex-1">
-                                                    <CardTitle className="text-white text-2xl font-bold mb-2">
+                                                <div className="flex-1 min-w-0">
+                                                    <CardTitle className="text-white text-xl md:text-2xl font-bold mb-2 leading-tight">
                                                         {step.title}
                                                     </CardTitle>
-                                                    <CardDescription className="text-white/60 text-base">
+                                                    <CardDescription className="text-white/70 text-sm md:text-base font-medium">
                                                         {step.duration}
                                                     </CardDescription>
                                                 </div>
                                             </div>
                                         </CardHeader>
                                         <Separator className="bg-gradient-to-r from-transparent via-gray-600/50 to-transparent" />
-                                        <CardContent className="pt-6">
-                                            <p className="text-white/90 mb-6 leading-relaxed text-base">{step.description}</p>
-                                            <div className="space-y-3">
-                                                <h4 className="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Entregas principais:</h4>
-                                                <div className="grid gap-2">
+                                        <CardContent className="pt-6 px-6 pb-6">
+                                            <p className="text-white/90 mb-6 leading-relaxed text-sm md:text-base">
+                                                {step.description}
+                                            </p>
+                                            <div className="space-y-4">
+                                                <h4 className="text-white font-semibold text-xs md:text-sm uppercase tracking-wider opacity-90">
+                                                    Entregas principais:
+                                                </h4>
+                                                <div className="space-y-3">
                                                     {step.deliverables.map((item, i) => (
                                                         <div key={i} className="flex items-center gap-3">
-                                                            <div className="w-1.5 h-1.5 rounded-full bg-white/70"></div>
-                                                            <span className="text-white/80 text-sm">{item}</span>
+                                                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-white/80 to-gray-300/80 flex-shrink-0"></div>
+                                                            <span className="text-white/85 text-sm md:text-base leading-relaxed">
+                                                                {item}
+                                                            </span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -155,24 +114,21 @@ export function ProcessSection() {
                                 </div>
 
                                 {/* Descrição adicional */}
-                                <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div className="space-y-4">
-                                        <ScrollReveal
-                                            baseOpacity={0.5}
-                                            enableBlur={false}
-                                            baseRotation={0.5}
-                                            blurStrength={1}
-                                            textClassName="text-white leading-relaxed text-md md:text-[42px]"
-                                        >
+                                <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} mt-6 lg:mt-0`}>
+                                    <div className="space-y-6 lg:px-4">
+                                        <div className="text-white leading-relaxed text-base md:text-lg lg:text-xl">
                                             {getStepDescription(index)}
-                                        </ScrollReveal>
+                                        </div>
 
                                         {/* Indicador visual da etapa */}
-                                        <div className="flex items-center gap-3 mt-6">
-                                            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-white/20 to-gray-300/20 flex items-center justify-center text-white font-bold text-sm">
+                                        <div className="flex items-center gap-4 pt-4">
+                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-white/25 to-gray-300/25 border border-white/20 flex items-center justify-center text-white font-bold text-base md:text-lg flex-shrink-0 shadow-lg">
                                                 {index + 1}
                                             </div>
-                                            <div className="flex-1 h-px bg-gradient-to-r from-white/30 to-transparent"></div>
+                                            <div className="flex-1 h-px bg-gradient-to-r from-white/40 via-white/20 to-transparent"></div>
+                                            <div className="text-white/60 text-sm md:text-base font-medium uppercase tracking-wider">
+                                                {step.duration}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -183,9 +139,7 @@ export function ProcessSection() {
             </div>
         </section>
     );
-}
-
-// Função para obter descrições detalhadas de cada etapa
+}// Função para obter descrições detalhadas de cada etapa
 function getStepDescription(index: number): string {
     const descriptions = [
         "Nesta fase inicial, mergulhamos profundamente no seu negócio. Compreendemos seus objetivos, desafios e expectativas. É o momento de descobrir oportunidades e definir uma estratégia sólida que guiará todo o projeto.",
