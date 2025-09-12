@@ -90,8 +90,8 @@ export function ProcessSection() {
                     <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
                         Metodologia Comprovada
                     </Badge>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                        Processo de <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Trabalho</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-glow-effect">
+                        Processo de <span className="text-glow-effect">Trabalho</span>
                     </h2>
                     <p className="text-lg text-white max-w-2xl mx-auto">
                         Transparência em cada etapa para entregas previsíveis e de alta qualidade
@@ -162,7 +162,7 @@ export function ProcessSection() {
                                             enableBlur={false}
                                             baseRotation={0.5}
                                             blurStrength={1}
-                                            textClassName="text-white leading-relaxed text-[42px]"
+                                            textClassName="text-white leading-relaxed text-md md:text-[42px]"
                                         >
                                             {getStepDescription(index)}
                                         </ScrollReveal>

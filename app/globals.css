@@ -193,6 +193,30 @@
     background-attachment: fixed;
   }
 
+  /* Mobile specific fixes */
+  @media (max-width: 768px) {
+    html,
+    body {
+      background-attachment: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Prevent white flash during scroll */
+    * {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    /* Ensure canvas elements don't flash */
+    canvas {
+      background: transparent !important;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
+
   body {
     position: relative;
   }
@@ -263,6 +287,34 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent white flash on mobile during scroll */
+  background: #000000;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Additional mobile scroll fixes */
+@media (max-width: 768px) {
+  html {
+    background: #000000 !important;
+  }
+
+  body {
+    background: #000000 !important;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent iOS bounce and white flash */
+  .bg-gray-900 {
+    background-color: #000000 !important;
+  }
+
+  /* Fix for sections during scroll */
+  section {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @keyframes float-up {
@@ -293,4 +345,20 @@ html {
 
 .animate-float-down {
   animation: float-down 1.5s ease-out infinite;
+}
+
+/* Efeito de brilho estático e sutil para texto */
+.text-glow-effect {
+  color: white;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito de brilho mais sutil para subtítulos */
+.text-glow-subtle {
+  color: white;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.3),
+    0 0 10px rgba(255, 255, 255, 0.15);
 }

@@ -316,7 +316,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
 
                                 {/* Conteúdo principal */}
                                 <div className="flex flex-col relative z-10 space-y-3">
-                                    <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight">
+                                    <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight text-glow-subtle">
                                         {service.title}
                                     </h3>
                                     <p className="text-sm text-gray-300/90 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -357,7 +357,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
 
                             {/* Conteúdo principal */}
                             <div className="flex flex-col relative z-10 space-y-3">
-                                <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight">
+                                <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight text-glow-subtle">
                                     {service.title}
                                 </h3>
                                 <p className="text-sm text-gray-300/90 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">

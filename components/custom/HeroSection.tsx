@@ -5,9 +5,9 @@ import DecryptedText from '../DecryptedText';
 
 export default function LandingPage() {
   return (
-    <div id='hero' className="relative min-h-full py-20">
+    <div id='hero' className="relative min-h-full w-full py-0 md:py-20 bg-transparent overflow-hidden">
       {/* LightRays Background */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full z-0 bg-transparent">
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffff"
@@ -24,37 +24,40 @@ export default function LandingPage() {
       </div>
 
       {/* Elementos decorativos sutis */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+      {/* <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gray-200/5 blur-[100px]" />
-      </div>
+      </div> */}
+
+      {/* Gradiente de transição suave para a próxima seção */}
+      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent z-5"></div> */}
 
       <div
         className="relative z-20 min-h-full flex flex-col items-center justify-center gap-10 py-20"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full flex flex-col items-center text-center space-y-8">
           <h1
-            className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight max-w-5xl cursor-pointer"
+            className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight max-w-5xl cursor-pointer text-glow-effect"
             style={{
               lineHeight: '1.1',
             }}
           >
             <DecryptedText
-              text="Transformo ideias em interfaces funcionais e elegantes."
+              text="Interfaces funcionais e elegantes."
               speed={40}
               maxIterations={35}
               sequential={true}
               revealDirection="start"
               animateOn="view"
               characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*"
-              className="text-white"
+              className="text-white text-glow-effect"
               encryptedClassName="text-white/30"
               parentClassName="whitespace-normal"
             />
           </h1>
 
           <p
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl"
+            className="text-lg md:text-2xl text-gray-300 max-w-3xl"
           >
             <DecryptedText
               text="Design • Desenvolvimento • Experiência do Usuário"

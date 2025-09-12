@@ -32,8 +32,8 @@ export default function PortfolioPage() {
             <div className="container mx-auto px-4 sm:px-6 pt-8">
                 {/* Título */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl font-bold text-white mb-4">
-                        Nosso <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Portfólio</span>
+                    <h1 className="text-5xl font-bold text-white mb-4 text-glow-effect">
+                        Nosso <span className="text-glow-effect">Portfólio</span>
                     </h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         Conheça alguns dos projetos que desenvolvemos com dedicação e inovação para nossos clientes
@@ -53,7 +53,7 @@ export default function PortfolioPage() {
 
                 {/* Call to Action */}
                 <div className="text-center py-16">
-                    <h2 className="text-3xl font-bold text-white mb-4">
+                    <h2 className="text-3xl font-bold text-white mb-4 text-glow-effect">
                         Gostou do que viu?
                     </h2>
                     <p className="text-gray-300 mb-8 max-w-2xl mx-auto">

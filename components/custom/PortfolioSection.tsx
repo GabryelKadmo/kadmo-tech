@@ -28,8 +28,8 @@ export function PortfolioSection() {
         <section className="py-20" id="portfolio">
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Trabalhos <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Destacados</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-glow-effect">
+                        Trabalhos <span className="text-glow-effect">Destacados</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         Conheça alguns dos nossos projetos mais recentes e veja como transformamos ideias em soluções digitais de alto impacto

@@ -20,9 +20,9 @@ export default function PartnersSection() {
         <div className="py-8" id="partners">
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-16 mb-16">
                 <h2
-                    className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
+                    className="text-4xl md:text-5xl font-bold text-center text-white mb-16 text-glow-effect"
                 >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">Conexões</span> que Transformam
+                    <span className="text-glow-effect">Conexões</span> que Transformam
                 </h2>
 
                 <div

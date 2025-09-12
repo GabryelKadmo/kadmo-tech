@@ -125,13 +125,22 @@ const LightRays: React.FC<LightRaysProps> = ({
 
       const renderer = new Renderer({
         dpr: Math.min(window.devicePixelRatio, 2),
-        alpha: true
+        alpha: true,
+        premultipliedAlpha: false,
+        preserveDrawingBuffer: false,
+        antialias: false
       });
       rendererRef.current = renderer;
 
       const gl = renderer.gl;
       gl.canvas.style.width = '100%';
       gl.canvas.style.height = '100%';
+      gl.canvas.style.backgroundColor = 'transparent';
+      gl.canvas.style.display = 'block';
+
+      // Configure WebGL context for transparency
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
       while (containerRef.current.firstChild) {
         containerRef.current.removeChild(containerRef.current.firstChild);
@@ -426,7 +435,8 @@ void main() {
   return (
     <div
       ref={containerRef}
-      className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
+      className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative bg-transparent ${className}`.trim()}
+      style={{ background: 'transparent' }}
     />
   );
 };

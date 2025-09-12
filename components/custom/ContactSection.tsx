@@ -59,8 +59,8 @@ export function ContactSection() {
                     <Badge variant="outline" className="mb-4 bg-gray-800 text-gray-200 border-white/50">
                         Vamos conversar
                     </Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Contato</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-glow-effect">
+                        Entre em <span className="text-glow-effect">Contato</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                         Pronto para transformar sua ideia em realidade? Envie uma mensagem ou me encontre nas redes.
