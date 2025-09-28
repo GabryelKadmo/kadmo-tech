@@ -1,13 +1,13 @@
 "use client";
 import React from 'react';
-import LightRays from '../LightRays';
+// import LightRays from '../LightRays';
 import DecryptedText from '../DecryptedText';
 
 export default function LandingPage() {
   return (
     <div id='hero' className="relative min-h-full w-full py-0 md:py-20 bg-transparent overflow-hidden">
       {/* LightRays Background */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-transparent">
+      {/* <div className="absolute inset-0 w-full h-full bg-transparent">
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffff"
@@ -21,7 +21,7 @@ export default function LandingPage() {
           fadeDistance={0.7}
           className="custom-rays"
         />
-      </div>
+      </div> */}
 
       {/* Elementos decorativos sutis */}
       {/* <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
@@ -33,7 +33,7 @@ export default function LandingPage() {
       {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent z-5"></div> */}
 
       <div
-        className="relative z-20 min-h-full flex flex-col items-center justify-center gap-10 py-20"
+        className="relative  min-h-full flex flex-col items-center justify-center gap-10 py-20"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full flex flex-col items-center text-center space-y-8">
           <h1

@@ -3,7 +3,7 @@ import { Footer } from '@/components/custom/Footer'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
 import PartnersSection from '@/components/custom/PartnersSection'
-import { PortfolioSection } from '@/components/custom/PortfolioSection'
+// import { PortfolioSection } from '@/components/custom/PortfolioSection'
 import { ProcessSection } from '@/components/custom/ProcessSection'
 import { ServicesSection } from '@/components/custom/ServicesSection'
 import ScrollVelocity from '@/components/ScrollVelocity'
@@ -44,19 +44,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-      {/* Header com navegação otimizada para SEO */}
       <Header />
-
-      {/* Hero Section - Primeira impressão */}
       <HeroSection />
-
-      {/* Seção de Serviços - Palavra-chave principal */}
       <ServicesSection />
-
-      {/* Portfolio - Demonstração de trabalhos */}
-      <PortfolioSection />
-
-      {/* Elemento visual com texto relevante para SEO */}
+      {/* <PortfolioSection /> */}
       <section className='my-20' aria-label="Desenvolvedor identificação">
         <ScrollVelocity
           texts={['Gabryel Kadmo', 'Front-end Developer']}
@@ -64,20 +55,10 @@ export default function HomePage() {
           className="text-white"
         />
       </section>
-
-      {/* Processo de trabalho - Confiabilidade */}
       <ProcessSection />
-
-      {/* Contato - Call to action */}
       <ContactSection />
-
-      {/* Parceiros - Credibilidade */}
       <PartnersSection />
-
-      {/* Footer - Links importantes */}
       <Footer />
-
-      {/* Schema.org para página principal */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -94,7 +75,7 @@ export default function HomePage() {
               "url": "https://www.kadmo.tech",
               "sameAs": [
                 "https://github.com/GabryelKadmo",
-                "https://www.linkedin.com/in/kadmo"
+                "https://www.linkedin.com/in/gabryel-kadmo/"
               ]
             },
             "breadcrumb": {

@@ -288,7 +288,7 @@
 html {
   scroll-behavior: smooth;
   /* Prevent white flash on mobile during scroll */
-  background: #000000;
+  background: # 000000 !important;
   -webkit-overflow-scrolling: touch;
 }
 

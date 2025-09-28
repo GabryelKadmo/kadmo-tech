@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, LinkedinIcon, Mail, MessageSquare, Phone } from "lucide-react";
+import { Github, LinkedinIcon, Mail, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 export function ContactSection() {
@@ -83,7 +83,7 @@ export function ContactSection() {
                                             type="text"
                                             name="name"
                                             placeholder="Seu nome"
-                                            className="bg-gray-300 border-gray-600 focus:border-white h-11 md:h-10"
+                                            className="bg-none text-white border-gray-100 focus:border-white focus:ring-0 focus:outline-none border-1 h-11 md:h-10 transition-colors"
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
@@ -94,7 +94,7 @@ export function ContactSection() {
                                             type="email"
                                             name="email"
                                             placeholder="Seu e-mail"
-                                            className="bg-gray-300 border-gray-600 focus:border-white h-11 md:h-10"
+                                            className="bg-none text-white border-gray-100 focus:border-white focus:ring-0 focus:outline-none border-1 h-11 md:h-10 transition-colors"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
@@ -105,7 +105,7 @@ export function ContactSection() {
                                             name="message"
                                             placeholder="Sua mensagem"
                                             rows={4}
-                                            className="bg-gray-300 border-gray-600 focus:border-white md:min-h-52 min-h-[100px]"
+                                            className="bg-none text-white border-gray-100 focus:border-white focus:ring-0 focus:outline-none border-1 md:min-h-24 min-h-[100px] transition-colors"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
@@ -136,7 +136,7 @@ export function ContactSection() {
                             <Card className="bg-gray-800/50 border-gray-700 hover:border-white/30 transition-colors">
                                 <CardContent className="p-4 md:p-6">
                                     <div className="space-y-4 md:space-y-6">
-                                        <div className="flex items-start gap-3 md:gap-4">
+                                        {/* <div className="flex items-start gap-3 md:gap-4">
                                             <Phone className="w-5 h-5 mt-1 text-gray-300" />
                                             <div>
                                                 <h3 className="font-medium text-white text-sm md:text-base">Telefone</h3>
@@ -147,7 +147,7 @@ export function ContactSection() {
                                                     (73) 99154-8689
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="flex items-start gap-3 md:gap-4">
                                             <Mail className="w-5 h-5 mt-1 text-gray-300" />
                                             <div>

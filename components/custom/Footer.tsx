@@ -1,5 +1,5 @@
 "use client";
-import { Github, LinkedinIcon, Mail, Phone } from "lucide-react";
+import { Github, LinkedinIcon, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { PrivacyPolicyModal } from "../privacy-policy-modal";
@@ -70,13 +70,13 @@ export function Footer() {
                         <h3 className="text-lg font-semibold text-white mb-6">Serviços</h3>
                         <ul className="space-y-3">
                             <li>
-                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">UI/UX Design</span>
+                                <span className="text-gray-400">UI/UX Design</span>
                             </li>
                             <li>
-                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Desenvolvimento Front-end</span>
+                                <span className="text-gray-400">Desenvolvimento Front-end</span>
                             </li>
                             <li>
-                                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Sistemas Sob Medida</span>
+                                <span className="text-gray-400">Sistemas Sob Medida</span>
                             </li>
                         </ul>
                     </div>
@@ -87,15 +87,15 @@ export function Footer() {
                             <li
                                 className="flex items-center gap-2"
                             >
-                                <Mail className="w-4 h-4 text-white" />
+                                <Mail className="w-4 h-4 text-white flex-shrink-0" />
                                 <span className="text-gray-400">gabryel.kadmo@mx2tech.com.br</span>
                             </li>
-                            <li
+                            {/* <li
                                 className="flex items-center gap-2"
                             >
                                 <Phone className="w-4 h-4 text-white" />
                                 <span className="text-gray-400">(73) 99154-8689</span>
-                            </li>
+                            </li> */}
                             <li
                                 className="flex items-center gap-4 mt-4"
                             >
@@ -105,7 +105,7 @@ export function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white transition-colors hover:-translate-y-1 hover:scale-110"
+                                        className="text-gray-400 hover:text-white transition-colors"
                                     >
                                         {social.icon}
                                     </a>
