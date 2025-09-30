@@ -45,6 +45,9 @@ export function Footer() {
                         >
                             Transformando ideias em experiências digitais excepcionais.
                         </p>
+                        <div className="mt-6">
+                            <div className="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="gabryel-kadmo" data-version="v1"></div>
+                        </div>
                     </div>
 
 
@@ -121,16 +124,15 @@ export function Footer() {
                         © {new Date().getFullYear()} Gabryel Kadmo. Todos os direitos reservados.
                     </p>
                     <div className="flex gap-6">
-                        <div className="hover:-translate-y-0.5 transition-transform">
+                        <div>
                             <TermsOfServiceModal />
                         </div>
 
-                        <div className="hover:-translate-y-0.5 transition-transform">
+                        <div>
                             <PrivacyPolicyModal />
                         </div>
                     </div>
                 </div>
-
             </div>
         </footer>
     );

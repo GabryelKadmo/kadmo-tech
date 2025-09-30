@@ -140,6 +140,12 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <StructuredData />
+        <script
+          src="https://platform.linkedin.com/badges/js/profile.js"
+          async
+          defer
+          type="text/javascript"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen`}
