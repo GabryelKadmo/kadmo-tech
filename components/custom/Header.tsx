@@ -65,7 +65,8 @@ export default function Header() {
                         {[
                             { id: "inicio", label: "Início", isHome: true },
                             // { id: "portfolio", label: "Portfólio" },
-                            { id: "contact", label: "Contato" },
+                            // { id: "contact", label: "Contato" },
+                            { id: "services", label: "Serviços" },
                             { id: "partners", label: "Parceiros" },
                         ].map((link) => (
                             <button

@@ -1,4 +1,4 @@
-import { ContactSection } from '@/components/custom/ContactSection'
+// import { ContactSection } from '@/components/custom/ContactSection'
 import { Footer } from '@/components/custom/Footer'
 import Header from '@/components/custom/Header'
 import HeroSection from '@/components/custom/HeroSection'
@@ -56,7 +56,7 @@ export default function HomePage() {
         />
       </section>
       <ProcessSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <PartnersSection />
       <Footer />
       <script
