@@ -84,7 +84,7 @@ export default function Header() {
                         className="hidden lg:flex space-x-4 md:space-x-5"
                     >
                         {[
-                            { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kadmo.jsx/", color: "hover:text-gray-300" },
+                            { icon: <FiInstagram size={24} />, href: "https://www.instagram.com/kxdmx.tsx/", color: "hover:text-gray-300" },
                             // { icon: <FaWhatsapp size={24} />, href: "https://abrir.link/RKPeG", color: "hover:text-green-400" },
                             { icon: <FiGithub size={24} />, href: "https://github.com/GabryelKadmo", color: "hover:text-gray-300" },
                             { icon: <FiLinkedin size={24} />, href: "https://www.linkedin.com/in/gabryel-kadmo/", color: "hover:text-gray-300" }
